@@ -281,7 +281,7 @@ The authentication client sends two commands to the authentication module.  Firs
 %this is the original of the paragraph below
 %The system workflow can be described simply in two use cases.  For the sake of brevity this description of these use cases does not include any error handling.   The first use case is described in Figure 1.  In this use case the user is wearing a bracelet but the bracelet does not yet contain any authentication information.  The users touches the sensor on the authentication module, the authentication module sees that the user's bracelet is not authenticated.  The authentication module tells the authentication client that the user is not authenticated and the client then prompts the user for their username and password.  The client verifies this information with the Kerberos server.  Then instructs the user to touch the sensor on the authentication module again.  The client then instructs the authentication module to write the ticket to the bracelet.  Once the ticket has been written, the client unlocks the workstation.  The message exchange for this use case can be seen in Figure 2.
 
-The system workflow can be described in two use cases.  For the sake of brevity we not include any error handling.  In the first use case (Figure 1) the user is wearing a bracelet but the bracelet is not yet authenticated.  The users touches the sensor on the authentication module, the authentication module sees that the user's bracelet is not authenticated and relays this information to the authentication client.  The client prompts the user for their username and password.  The client verifies this information with the Kerberos server, then instructs the user to touch the sensor on the authentication module again.  The client then instructs the authentication module to write the ticket to the bracelet.  Once the ticket has been written, the client unlocks the workstation.  The message exchange for this use case can be seen in Figure 2. 
+The system workflow can be described in two use cases.  For the sake of brevity we do not include any error handling.  In the first use case (Figure~\ref{fig:UnauthenticatedME}) the user is wearing a bracelet but the bracelet is not yet authenticated.  The users touches the sensor on the authentication module, the authentication module sees that the user's bracelet is not authenticated and relays this information to the authentication client.  The client prompts the user for their username and password.  The client verifies this information with the Kerberos server, then instructs the user to touch the sensor on the authentication module again.  The client then instructs the authentication module to write the ticket to the bracelet.  Once the ticket has been written, the client unlocks the workstation. 
 
 %\begin{figure}
 %\centering
@@ -290,17 +290,19 @@ The system workflow can be described in two use cases.  For the sake of brevity 
 %\label{fig:UnauthenticatedUC}
 %\end{figure}
 
+\begin{float}
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{../Paper/UnauthenticatedME}
 \caption[Un-Authenticated Message Exchange]{Un-Authenticated Message Exchange}
 \label{fig:UnauthenticatedME}
 \end{figure}
+\end{float}
 
 %this is the original of the paragraph below
 %The second use case outlines what happens when the user has a proper token stored in their bracelet.  It is described in Figure 3.  It seems very simple from the user's point of view.  The user touches the sensor on the authentication module and the workstations unlocks.  The process behind the scenes is also much simpler.  The module asks for a status, and the bracelet provides it with the token it has stored.  The module passes this information along to the clients which interoperates the token as a Kerberos ticket.  The client verifies the ticket with the Kerberos server and unlocks the workstation.  The message exchange for this use case is presented in Figure 4.
 
-In the second use case (Figure 3) the user has an authenticated bracelet.  The user touches the sensor on the authentication module and the workstations unlocks.  The process behind the scenes is also much simpler (Figure 4).  The module asks for a status, and the bracelet provides it with the token it has stored.  The module passes this information along to the clients which interprets the token as a Kerberos ticket.  The client verifies the ticket with the Kerberos server and unlocks the workstation.
+In the second use case (Figure~\ref{fig:AuthenticatedME}) the user has an authenticated bracelet.  The user touches the sensor on the authentication module and the workstations unlocks.  The module asks for a status, and the bracelet provides it with the token it has stored.  The module passes this information along to the clients which interprets the token as a Kerberos ticket.  The client verifies the ticket with the Kerberos server and unlocks the workstation.
 
 %\begin{figure}
 %\centering
@@ -309,18 +311,21 @@ In the second use case (Figure 3) the user has an authenticated bracelet.  The u
 %\label{fig:AuthenticatedUC}
 %\end{figure}
 
+\begin{float}
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{../Paper/AuthenticatedME}
 \caption[Authenticated Message Exchange]{Authenticated Message Exchange}
 \label{fig:AuthenticatedME}
 \end{figure}
+\end{float}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiments and Results}\label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prototype}
-The development of a prototype is in well underway.  The hardware prototypes for the bracelet and the authentication module are based on the Atmel ATMega328 microcontroller operating at 20 MHz and an LM358AN Amplifier.  Both the bracelet and the authentication module have copper pads that make contact with the user's skin.  The signal from the skin is fed into the amplifier and the signal to the skin is driven by setting a pin on the microcontroller.  We also built a resistive analogue to represent the resistance from a user's wrist to their finger tip.  The prototype for the authentication client has been written in Python.
+Our prototype development is well underway.  The hardware prototypes for the bracelet and the authentication module are based on the Atmel ATMega328 microcontroller operating at 20 MHz and an LM358AN Amplifier.  Both the bracelet and the authentication module have copper pads that make contact with the user's skin.  The signal from the skin is fed into the amplifier and the signal to the skin is driven by setting a pin on the microcontroller.  We also built a resistive analogue to represent the resistance from a user's wrist to their finger tip.  The prototype for the authentication client has been written in Python.
 \subsection{Results}
 Initial results are encouraging.  We are able to send commands from the authentication module to the bracelet.  The bracelet can correctly interpret those commands and it responds when provided a "get status" command.   The time elapsed for a get status command and a status message with a 256 byte token is approximately 500 milliseconds.
 We also implemented the functionality that clears the authentication information when the bracelet is removed.  This was accomplished by using one of the hardware interrupts on the microcontroller. 
