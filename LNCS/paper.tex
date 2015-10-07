@@ -189,28 +189,34 @@ We also wanted to be sure that an authenticated bracelet was not transferable.  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}\label{sec:related}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Related work can be divided into two key areas: authentication and deauthentication.  Authentication-based research looks at using wristbands or other wearables to help authenticate a user to a computing resource.  Deauthentication-based research focuses on wearables that do the opposite, helping to deauthenticate a user from a computer resource when the user is done using the resource.  Some wearables are able to both authenticate users to and deauthenticate users from computing resources \cite{} while other wearables can only be used for authentication or for deauthentication \cite{}.
 
-\subsection{Authentication}
-There have been several previous attempts at developing wearable-authentication technology.  Some of these attempts have taken drastically different approaches than kbid while others share some similarities.  However, none of the existing technology has considered using skin conductance as the transfer vehicle for the authentication token in order to provide robustness against repeater attacks.
-
-\subsubsection{Bionym Nymi}
-The Bionym Nymi \cite{} is an authentication wristband that broadcasts a digitally signed authentication signal derived from a user's heartbeat to nearby devices using Bluetooth Low Energy.  "The Nymi's ECG recognition algorithms observe the shape of the ECG waveform, extracting unique and consistent features that are a result of a user's physiology. The Nymi is robust against a wide variety of health issues." \cite{}.
-
-\subsubsection{Intel Authentication Bracelet Prototype}
-Intel, in partnership with Fossil, has announced a prototype for an authentication bracelet based on its Curie platform \cite{}.  The bracelet is designed to automatically unlock a device when a given user is nearby.  When the bracelet is first put on, the user must log in to a bracelet-enabled device with a standard password.  However, subsequent logins to bracelet-enabled devices do not require a password and the bracelet will continue to broadcast an authentication token until the bracelet has been taken off, causing the device's volatile storage to lose the authentication credential.  The bracelet uses Bluetooth Low Energy to broadcast its credential to nearby bracelet-enabled devices.
+In addition to the ZEBRA, which we have described previously, there have been several previous attempts at developing wearable-authentication technology.  Two of note include the Bionym Nymi \cite{} and the Intel Authentication Bracelet \cite{}.  The Bionym Nymi \cite is an authentication wristband that broadcasts a digitally signed authentication signal derived from a user's heartbeat to nearby devices using Bluetooth Low Energy.  The Intel Authentication Bracelet requires a user to log in to a system with a standard password.  A credential is then transmitted to the bracelet using Bluetooth Low Energy.  This credential is then broadcast to nearby bracelet-enabled devices in order to allow password-less login.
 
 \subsubsection{Limitations of Existing Work}
-Existing authentication wearables use wireless communication technology (typically Bluetooth LE)to broadcast their authentication credentials.  Thus the devices are likely vulnerable to ghost-and-leech attacks.  Ghost-and-leech attacks occur when an attacker uses a more powerful radio transmitter than the transmitter found on a wireless device in order to capture and rebroadcast the wireless signal.  
+Existing authentication wearables use wireless communication technology (typically Bluetooth LE)to broadcast their authentication credentials.  Thus the devices are likely vulnerable to ghost-and-leech attacks \cite{}.  Ghost-and-leech attacks occur when an attacker uses a more powerful radio transmitter than the transmitter found on a wireless device in order to capture and rebroadcast the wireless signal in order to fool a target into believing that the wireless device is in closer proximity to the target than it actually is.
 
-\par
-In our context, an attacker could capture and rebroadcast the authentication signal off of an authentication wearable and thus could log in to a computer terminal even when an authorized user is not near the terminal.  For example, in a hospital, a doctor might wear an authentication bracelet which continuously broadcasts a changing login credential using Bluetooth Low Energy.  An attacker might place a receiver next to a target doctor's office.  The receiver could then capture the signal and send it to a portable rebroadcaster which the attacker could use to unlock a computer terminal far from the doctor's office.  Due to the wireless nature of these types of authentication wearables, these types of attacks can be extremely difficult to protect against.
+%Related work can be divided into two key areas: authentication and deauthentication.  Authentication-based research looks at using wristbands or other wearables to help authenticate a user to a computing resource.  Deauthentication-based research focuses on wearables that do the opposite, helping to deauthenticate a user from a computer resource when the user is done using the resource.  Some wearables are able to both authenticate users to and deauthenticate users from computing resources \cite{} while other wearables can only be used for authentication or for deauthentication \cite{}.
 
-\subsection{Deauthentication}
-There are numerous wearables that are able to successfully deauthenticate a user when the physical connection between the wearable and the computer is broken \cite{}.  Most of these techniques form a circuit that can be physically broken when the wearable is removed \cite{} but some more advanced techniques such as Apple's "Wrist Detect" \cite{} can determine if a wearable is in constant contact with skin.
+%\subsection{Authentication}
+%There have been several previous attempts at developing wearable-authentication technology.  Some of these attempts have taken drastically different approaches than kbid while others share some similarities.  However, none of the existing technology has considered using skin conductance as the transfer vehicle for the authentication token in order to provide robustness against repeater attacks.
 
-\subsubsection{ZEBRA: Zero-Effort Bilateral Recurring Authentication}
-ZEBRA \cite{} was developed to solve a very different problem than the authentication bracelets described above.  Instead of authenticating a user to a computer terminal, ZEBRA is focused on detecting when a user is done using the computer terminal and deauthenticating the user from the terminal even if the user forgets to do so.  ZEBRA is prototyped as a bracelet containing an accelerometer and a variety of sensors.  A user puts on the bracelet and begins using a computer terminal as he or she normally would.  ZEBRA dynamically builds a profile of the user's hand movements in a short amount of time and then enforces this profile for the duration of the user's computing session by comparing the hand movements observed with the wrist band to data captured from keyboard and mouse movements.
+%\subsubsection{Bionym Nymi}
+%The Bionym Nymi \cite{} is an authentication wristband that broadcasts a digitally signed authentication signal derived from a user's heartbeat to nearby devices using Bluetooth Low Energy.  "The Nymi's ECG recognition algorithms observe the shape of the ECG waveform, extracting unique and consistent features that are a result of a user's physiology. The Nymi is robust against a wide variety of health issues." \cite{}.
+
+%\subsubsection{Intel Authentication Bracelet Prototype}
+%Intel, in partnership with Fossil, has announced a prototype for an authentication bracelet based on its Curie platform \cite{}.  The bracelet is designed to automatically unlock a device when a given user is nearby.  When the bracelet is first put on, the user must log in to a bracelet-enabled device with a standard password.  However, subsequent logins to bracelet-enabled devices do not require a password and the bracelet will continue to broadcast an authentication token until the bracelet has been taken off, causing the device's volatile storage to lose the authentication credential.  The bracelet uses Bluetooth Low Energy to broadcast its credential to nearby bracelet-enabled devices.
+
+%\subsubsection{Limitations of Existing Work}
+%Existing authentication wearables use wireless communication technology (typically Bluetooth LE)to broadcast their authentication credentials.  Thus the devices are likely vulnerable to ghost-and-leech attacks.  Ghost-and-leech attacks occur when an attacker uses a more powerful radio transmitter than the transmitter found on a wireless device in order to capture and rebroadcast the wireless signal.  
+
+%\par
+%In our context, an attacker could capture and rebroadcast the authentication signal off of an authentication wearable and thus could log in to a computer terminal even when an authorized user is not near the terminal.  For example, in a hospital, a doctor might wear an authentication bracelet which continuously broadcasts a changing login credential using Bluetooth Low Energy.  An attacker might place a receiver next to a target doctor's office.  The receiver could then capture the signal and send it to a portable rebroadcaster which the attacker could use to unlock a computer terminal far from the doctor's office.  Due to the wireless nature of these types of authentication wearables, these types of attacks can be extremely difficult to protect against.
+
+%\subsection{Deauthentication}
+%There are numerous wearables that are able to successfully deauthenticate a user when the physical connection between the wearable and the computer is broken \cite{}.  Most of these techniques form a circuit that can be physically broken when the wearable is removed \cite{} but some more advanced techniques such as Apple's "Wrist Detect" \cite{} can determine if a wearable is in constant contact with skin.
+
+%\subsubsection{ZEBRA: Zero-Effort Bilateral Recurring Authentication}
+%ZEBRA \cite{} was developed to solve a very different problem than the authentication bracelets described above.  Instead of authenticating a user to a computer terminal, ZEBRA is focused on detecting when a user is done using the computer terminal and deauthenticating the user from the terminal even if the user forgets to do so.  ZEBRA is prototyped as a bracelet containing an accelerometer and a variety of sensors.  A user puts on the bracelet and begins using a computer terminal as he or she normally would.  ZEBRA dynamically builds a profile of the user's hand movements in a short amount of time and then enforces this profile for the duration of the user's computing session by comparing the hand movements observed with the wrist band to data captured from keyboard and mouse movements.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Threat Model}\label{sec:threats}
@@ -290,14 +296,12 @@ The system workflow can be described in two use cases.  For the sake of brevity 
 %\label{fig:UnauthenticatedUC}
 %\end{figure}
 
-\begin{float}
-\begin{figure}
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.7\linewidth]{../Paper/UnauthenticatedME}
 \caption[Un-Authenticated Message Exchange]{Un-Authenticated Message Exchange}
 \label{fig:UnauthenticatedME}
 \end{figure}
-\end{float}
 
 %this is the original of the paragraph below
 %The second use case outlines what happens when the user has a proper token stored in their bracelet.  It is described in Figure 3.  It seems very simple from the user's point of view.  The user touches the sensor on the authentication module and the workstations unlocks.  The process behind the scenes is also much simpler.  The module asks for a status, and the bracelet provides it with the token it has stored.  The module passes this information along to the clients which interoperates the token as a Kerberos ticket.  The client verifies the ticket with the Kerberos server and unlocks the workstation.  The message exchange for this use case is presented in Figure 4.
@@ -311,21 +315,19 @@ In the second use case (Figure~\ref{fig:AuthenticatedME}) the user has an authen
 %\label{fig:AuthenticatedUC}
 %\end{figure}
 
-\begin{float}
-\begin{figure}
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.7\linewidth]{../Paper/AuthenticatedME}
 \caption[Authenticated Message Exchange]{Authenticated Message Exchange}
 \label{fig:AuthenticatedME}
 \end{figure}
-\end{float}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiments and Results}\label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prototype}
-Our prototype development is well underway.  The hardware prototypes for the bracelet and the authentication module are based on the Atmel ATMega328 microcontroller operating at 20 MHz and an LM358AN Amplifier.  Both the bracelet and the authentication module have copper pads that make contact with the user's skin.  The signal from the skin is fed into the amplifier and the signal to the skin is driven by setting a pin on the microcontroller.  We also built a resistive analogue to represent the resistance from a user's wrist to their finger tip.  The prototype for the authentication client has been written in Python.
+The hardware prototypes for the bracelet and the authentication module are based on the Atmel ATMega328 microcontroller operating at 20 MHz and an LM358AN Amplifier.  Both the bracelet and the authentication module have copper pads that make contact with the user's skin.  The signal from the skin is fed into the amplifier and the signal to the skin is driven by setting a pin on the microcontroller.  We also built a resistive analogue to represent the resistance from a user's wrist to their finger tip.  The prototype for the authentication client has been written in Python.
 \subsection{Results}
 Initial results are encouraging.  We are able to send commands from the authentication module to the bracelet.  The bracelet can correctly interpret those commands and it responds when provided a "get status" command.   The time elapsed for a get status command and a status message with a 256 byte token is approximately 500 milliseconds.
 We also implemented the functionality that clears the authentication information when the bracelet is removed.  This was accomplished by using one of the hardware interrupts on the microcontroller. 
