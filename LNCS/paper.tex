@@ -101,10 +101,10 @@ pdfpagelayout=SinglePage
 %\titlerunning{Short Title}
 
 %Single insitute
-\author{Joseph Carrigan \and Paul Martin \and Michael Rushanan}
+%\author{Joseph Carrigan \and Paul Martin \and Michael Rushanan}
 %If there are too many authors, use \authorrunning
 %\authorrunning{First Author et al.}
-\institute{Johns Hopkins University \{joseph.carrigan,pmartin,mrushan1\}@jhu.edu}
+%\institute{Johns Hopkins University \{joseph.carrigan,pmartin,mrushan1\}@jhu.edu}
 
 %Multiple insitutes
 %Currently disabled
@@ -126,7 +126,7 @@ Insitute 2\\
 \maketitle
 
 \begin{abstract}
-The most common method for a user to gain access to a system, service, or resource is to provide a secret, often a password, that verifies her identity and thus authenticates her. Password-based authentication is considered strong only when the password meets certain length and complexity requirements, or when it is combined with other methods in multi-factor authentication. Unfortunately, many authentication systems do not enforce strong passwords due to a number of limitations; for example, the time taken to enter complex passwords. We present an authentication system that addresses these limitations by prompting a user for credentials once and then storing an authentication ticket in a wearable device that we call \textit{Kerberos-based Identity bracelet} (KBID).  
+The most common method for a user to gain access to a system, service, or resource is to provide a secret, often a password, that verifies her identity and thus authenticates her. Password-based authentication is considered strong only when the password meets certain length and complexity requirements, or when it is combined with other methods in multi-factor authentication. Unfortunately, many authentication systems do not enforce strong passwords due to a number of limitations; for example, the time taken to enter complex passwords. We present an authentication system that addresses these limitations by prompting a user for credentials once and then storing an authentication ticket in a wearable device that we call \textit{Kerberos Bracelet Identification} (KBID).  
 \end{abstract}
 
 \keywords{authentication, kerberos, wearables, passwords}
@@ -175,7 +175,7 @@ KBID originates from the idea of integrating a wearable device to achieve some a
 
 At the time, ZEBRA was only envisioned as a method to de-authenticate a user from a computer system and did not include a way to initially authenticate the user to the system.  Assuming that the user has already accepted wearing a device that will effectively de-authenticate them, adding functionality to rapidly authenticate them only increases the usefulness of the system.
 
-We avoided using radio frequency (RF) emissions for two reasons.  First, RF by it's nature emits information into the environment.  That information, once emitted, can be received by various means.  Second, RF relies on the underlying communication being secure.  If a security flaw is discovered in an RF communication framework, e.g. Bluetooth LE, then the systems as it exists could be vulnerable to the flaw.  Specifically, there is no need to alter or even monitor the information that is exchanged between the computer system and a wearable device.  An attacker would only need to extend the range of the wireless communication in order to gain access to the computer system.
+We avoided using radio frequency (RF) emissions for two reasons.  First, RF by it's nature emits information into the environment.  That information, once emitted, can be received by various means.  Second, RF relies on the underlying communication being secure.  If a security flaw is discovered in an RF communication framework, e.g. Bluetooth low energy (BLE)~\cite{BLEATTACK}, then the systems as it exists could be vulnerable to the flaw.  Specifically, there is no need to alter or even monitor the information that is exchanged between the computer system and a wearable device.  An attacker would only need to extend the range of the wireless communication in order to gain access to the computer system.
 
 % TODO: Unless we can be explicit about the human factor issues, I'd say drop this.
 %We considered adding contacts to the wearable device.  This would allow the direct exchange of information over a closed circuit without the ability to use and extended range attack.  However, the human factors issues became clear when we considered the design.  Thus we were left with BCC.
@@ -194,10 +194,10 @@ We designed our authenticated bracelet to be non-transferrable (i.e., authentica
 \section{Related Work}\label{sec:related}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In addition to the ZEBRA, which we have described previously, there have been several previous attempts at developing wearable-authentication technology.  Two of note include the Bionym Nymi \cite{goode2014bring} and the Intel Authentication Bracelet \cite{idf2015intel}.  The Bionym Nymi is an authentication wristband that broadcasts a digitally signed authentication signal derived from a user's heartbeat to nearby devices using Bluetooth Low Energy.  The Intel Authentication Bracelet requires a user to log in to a system with a standard password.  A credential is then transmitted to the bracelet using Bluetooth Low Energy.  This credential is then broadcast to nearby bracelet-enabled devices in order to allow password-less login.
+In addition to the ZEBRA, which we have described previously, there have been several previous attempts at developing wearable-authentication technology.  Two of note include the Bionym Nymi \cite{goode2014bring} and the Intel Authentication Bracelet \cite{idf2015intel}.  The Bionym Nymi is an authentication wristband that broadcasts a digitally signed authentication signal derived from a user's heartbeat to nearby devices using BLE~\cite{BLEoverview}.  The Intel Authentication Bracelet requires a user to log in to a system with a standard password.  A credential is then transmitted to the bracelet using BLE.  This credential is then broadcast to nearby bracelet-enabled devices in order to allow password-less login.
 
 \subsubsection{Limitations of Existing Work}
-Existing authentication wearables use wireless communication technology (typically Bluetooth LE)to broadcast their authentication credentials.  Thus the devices are likely vulnerable to ghost-and-leech attacks \cite{czeskis2008rfids}.  Ghost-and-leech attacks occur when an attacker uses a more powerful radio transmitter than the transmitter found on a wireless device in order to capture and rebroadcast the wireless signal in order to fool a target into believing that the wireless device is in closer proximity to the target than it actually is.
+Existing authentication wearables use wireless communication technology (typically BLE) to broadcast their authentication credentials.  Thus the devices are likely vulnerable to ghost-and-leech attacks \cite{czeskis2008rfids}.  Ghost-and-leech attacks occur when an attacker uses a more powerful radio transmitter than the transmitter found on a wireless device in order to capture and rebroadcast the wireless signal in order to fool a target into believing that the wireless device is in closer proximity to the target than it actually is.
 
 %Related work can be divided into two key areas: authentication and deauthentication.  Authentication-based research looks at using wristbands or other wearables to help authenticate a user to a computing resource.  Deauthentication-based research focuses on wearables that do the opposite, helping to deauthenticate a user from a computer resource when the user is done using the resource.  Some wearables are able to both authenticate users to and deauthenticate users from computing resources \cite{} while other wearables can only be used for authentication or for deauthentication \cite{}.
 
