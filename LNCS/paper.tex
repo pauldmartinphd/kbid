@@ -194,10 +194,10 @@ We designed our authenticated bracelet to be non-transferrable (i.e., authentica
 \section{Related Work}\label{sec:related}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In addition to the ZEBRA, which we have described previously, there have been several previous attempts at developing wearable-authentication technology.  Two of note include the Bionym Nymi \cite{} and the Intel Authentication Bracelet \cite{}.  The Bionym Nymi \cite is an authentication wristband that broadcasts a digitally signed authentication signal derived from a user's heartbeat to nearby devices using Bluetooth Low Energy.  The Intel Authentication Bracelet requires a user to log in to a system with a standard password.  A credential is then transmitted to the bracelet using Bluetooth Low Energy.  This credential is then broadcast to nearby bracelet-enabled devices in order to allow password-less login.
+In addition to the ZEBRA, which we have described previously, there have been several previous attempts at developing wearable-authentication technology.  Two of note include the Bionym Nymi \cite{goode2014bring} and the Intel Authentication Bracelet \cite{idf2015intel}.  The Bionym Nymi is an authentication wristband that broadcasts a digitally signed authentication signal derived from a user's heartbeat to nearby devices using Bluetooth Low Energy.  The Intel Authentication Bracelet requires a user to log in to a system with a standard password.  A credential is then transmitted to the bracelet using Bluetooth Low Energy.  This credential is then broadcast to nearby bracelet-enabled devices in order to allow password-less login.
 
 \subsubsection{Limitations of Existing Work}
-Existing authentication wearables use wireless communication technology (typically Bluetooth LE)to broadcast their authentication credentials.  Thus the devices are likely vulnerable to ghost-and-leech attacks \cite{}.  Ghost-and-leech attacks occur when an attacker uses a more powerful radio transmitter than the transmitter found on a wireless device in order to capture and rebroadcast the wireless signal in order to fool a target into believing that the wireless device is in closer proximity to the target than it actually is.
+Existing authentication wearables use wireless communication technology (typically Bluetooth LE)to broadcast their authentication credentials.  Thus the devices are likely vulnerable to ghost-and-leech attacks \cite{czeskis2008rfids}.  Ghost-and-leech attacks occur when an attacker uses a more powerful radio transmitter than the transmitter found on a wireless device in order to capture and rebroadcast the wireless signal in order to fool a target into believing that the wireless device is in closer proximity to the target than it actually is.
 
 %Related work can be divided into two key areas: authentication and deauthentication.  Authentication-based research looks at using wristbands or other wearables to help authenticate a user to a computing resource.  Deauthentication-based research focuses on wearables that do the opposite, helping to deauthenticate a user from a computer resource when the user is done using the resource.  Some wearables are able to both authenticate users to and deauthenticate users from computing resources \cite{} while other wearables can only be used for authentication or for deauthentication \cite{}.
 
@@ -242,7 +242,21 @@ As a hardware and software solution, the threat model for KBID includes many sub
 Here we describe in detail the design and implementation of the KBID system.  First we discuss the high level design where we explain the four major components of the system.  Next, we discuss the interface designs and the communication protocols between the major components.  Finally, we discuss the system workflow.
 
 \subsection{High Level Design}
-The system is composed of four main parts: a bracelet, an authentication module, an authentication client, and a Kerberos authentication server.  The bracelet is a wearable device that fastened to the user's wrist.  The bracelet makes contact with the user's skin and applies a signal directly to the user's skin.  The authentication module has a sensor with a button under it.  When the user touches the sensor and depresses the button, the authentication module initiates communication with the bracelet.  The authentication module is attached via RS-232 serial to the computer system to which the user wants to authenticate.  A workstation hosts the authentication client.  The client monitors the serial connection for data and when necessary, opens a connection to the Kerberos server for authentication.  Finally, the Kerberos server is a default installation and uses the default implementation of the authentication protocol.
+The system is composed of four main parts: a bracelet (Figure~\ref{fig:bracelet}), an authentication module (Figure~\ref{fig:authenticationmodule}) an authentication client, and a Kerberos authentication server.  The bracelet is a wearable device that fastened to the user's wrist.  The bracelet makes contact with the user's skin and applies a signal directly to the user's skin.  The authentication module has a sensor with a button under it.  When the user touches the sensor and depresses the button, the authentication module initiates communication with the bracelet.  The authentication module is attached via RS-232 serial to the computer system to which the user wants to authenticate.  A workstation hosts the authentication client.  The client monitors the serial connection for data and when necessary, opens a connection to the Kerberos server for authentication.  Finally, the Kerberos server is a default installation and uses the default implementation of the authentication protocol.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\linewidth]{../Paper/Bracelet}
+\caption[KBID Prototype Bracelet]{KBID Prototype Bracelet}
+\label{fig:bracelet}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\linewidth]{../Paper/AuthenticationModule}
+\caption[KBID Prototype Authentication Module]{KBID Prototype Authentication Module}
+\label{fig:authenticationmodule}
+\end{figure}
 
 \subsection{Interfaces and Communication}
 The KBID system includes three interfaces.  The interface between the bracelet and the authentication module takes place over the user's skin.  The interface between the authentication module and the authentication client takes place over RS-232 serial.  Finally, the interface between the authentication client and the Kerberos server uses the network.  Since the communication between a client and a Kerberos server is well documented, we will not discuss it in this paper.
