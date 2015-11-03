@@ -20,6 +20,10 @@ Czeskis, A., Koscher, K., Smith, J.R., Kohno, T.: Rfids and secret handshakes:
   context-aware communications. In: Proceedings of the 15th ACM conference on
   Computer and communications security. pp. 479--490. ACM (2008)
 
+\bibitem{BLEoverview}
+Gomez, C., Oller, J., Paradells, J.: Overview and evaluation of bluetooth low
+  energy: An emerging low-power wireless te chnology  (2012)
+
 \bibitem{goode2014bring}
 Goode, A.: Bring your own finger--how mobile is bringing biometrics to
   consumers. Biometric Technology Today  2014(5),  5--9 (2014)
@@ -32,6 +36,11 @@ Krzanich, B.: Intel developer forum san francisco opening keynote. Tech. rep.
 Mare, S., Markham, A., Cornelius, C., Peterson, R., Kotz, D.: Zebra:
   Zero-effort bilateral recurring authentication. In: Security and Privacy
   (SP), 2014 IEEE Symposium on (May 2014)
+
+\bibitem{BLEATTACK}
+Ryan, M.: Bluetooth: With low energy comes low security. In: Proceedings of the
+  7th USENIX Conference on Offensive Technologies. USENIX Association (2013),
+  \url{http://dl.acm.org/citation.cfm?id=2534748.2534754}
 
 \bibitem{Yan:2004:PMS:1024867.1025014}
 Yan, J., Blackwell, A., Anderson, R., Grant, A.: Password memorability and
