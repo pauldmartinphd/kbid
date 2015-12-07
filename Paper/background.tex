@@ -1,0 +1,22 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}\label{sec:background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+KBID originates from the idea of integrating a wearable device to achieve some additional property in an authentication system (e.g., de-authentication). In particular, we are inspired by the design of zero-effort bilateral recurring authentication (ZEBRA) by Mare et al.~\cite{mare:zebra:2014}. In ZEBRA, a user wears a bracelet that encapsulates a wireless radio, accelerometer, and gyroscope; these components record and transmit wrist movements to a computer system that is currently being used. The computer system continually compares received movement measurements to input it receives from it's keyboard and mouse. If these two measurements are not correlated, the current session is de-authenticated. 
+
+At the time, ZEBRA was only envisioned as a method to de-authenticate a user from a computer system and did not include a way to initially authenticate the user to the system.  Assuming that the user has already accepted wearing a device that will effectively de-authenticate them, adding functionality to rapidly authenticate them only increases the usefulness of the system.
+
+We avoided using radio frequency (RF) emissions for two reasons.  First, RF by it's nature emits information into the environment.  That information, once emitted, can be received by various means.  Second, RF relies on the underlying communication being secure.  If a security flaw is discovered in an RF communication framework, e.g. Bluetooth low energy (BLE)~\cite{BLEATTACK}, then the systems as it exists could be vulnerable to the flaw.  Specifically, there is no need to alter or even monitor the information that is exchanged between the computer system and a wearable device.  An attacker would only need to extend the range of the wireless communication in order to gain access to the computer system.
+
+% TODO: Unless we can be explicit about the human factor issues, I'd say drop this.
+%We considered adding contacts to the wearable device.  This would allow the direct exchange of information over a closed circuit without the ability to use and extended range attack.  However, the human factors issues became clear when we considered the design.  Thus we were left with BCC.
+
+We instead use body-coupled communication (BCC), or transmission of information over the human body as a medium. We are not the first to use BCC to transmit a secret. For example, Chang et al. introduce a system for key exchange over a body area network~\cite{chang:healthtech:2013}. By applying a very small voltage to the tissue of a dead mouse, they were able to communicate at a rate of 5Hz or 5 bits per second.  However, this data rate is not acceptable for our work as we would need to communicate authentication data of at least 256 bits, and this would take nearly a minute to transmit.  
+
+%this is the original of the paragraph below
+%We also wanted to be sure that the authentication information was non-transferable once the bracelet was holding it.  Thus we incorporated a feature in the design that would clear out the authentication information once it detected that the bracelet was removed.
+
+We designed our authenticated bracelet to be non-transferrable (i.e., authenticating and then giving the bracelet to someone else). To support this feature, we zero all authentication information upon bracelet removal. 
+
+%We also wanted to be sure that an authenticated bracelet was not transferable.  We incorporated a feature in the design that would clear out the authentication information once the bracelet was removed.
+
+%Finally we wanted to provide an authentication model that was useful as a real world example.  Thus we incorporated a Kerberos server as the source of authentication.

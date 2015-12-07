@@ -1,0 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experiments and Results}\label{sec:results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prototype}
+The hardware prototypes for the bracelet and the authentication module are based on the Atmel ATMega328 microcontroller operating at 20 MHz and an LM358AN Amplifier.  Both the bracelet and the authentication module have copper pads that make contact with the user's skin.  The signal from the skin is fed into the amplifier and the signal to the skin is driven by setting a pin on the microcontroller.  We also built a resistive analogue to represent the resistance from a user's wrist to their finger tip.  The prototype for the authentication client has been written in Python.
+\subsection{Results}
+Initial results are encouraging.  We are able to send commands from the authentication module to the bracelet.  The bracelet can correctly interpret those commands and it responds when issued a Get Status command.   The time elapsed for a Get Status command and a status message with a 256 byte token is approximately 500 milliseconds.  
+We also implemented the functionality that clears the authentication information when the bracelet is removed.  This was accomplished by using one of the hardware interrupts on the microcontroller. 
+\subsection{Hurdles}
+We encountered two major hurdles during the development of the first prototype.  First, in order to successfully send a signal the bracelet and the authentication module must have a common reference for voltage.  Second, while we have been able to get the signal to transmit from the authentication module to the bracelet, we have not been able to get the signal to travel in the opposite direction and arrive in a way that the signal can be interpreted by the authentication module.  To solve both of these issues, we plan on changing the method by which the signal is transmitted over the user's skin to capacitive coupling.
