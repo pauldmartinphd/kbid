@@ -1,0 +1,153 @@
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage[american]{babel}
+
+\usepackage{graphicx}
+
+%extended enumerate, such as \begin{compactenum}
+\usepackage{paralist}
+
+%put figures inside a text
+%\usepackage{picins}
+%use
+%\piccaptioninside
+%\piccaption{...}
+%\parpic[r]{\includegraphics ...}
+%Text...
+
+%Sorts the citations in the brackets 
+%\usepackage{cite}
+
+%for easy quotations: \enquote{text}
+\usepackage{csquotes}
+
+\usepackage[T1]{fontenc}
+
+%enable margin kerning
+\usepackage{microtype}
+
+%better font, similar to the default springer font
+\usepackage[%
+rm={oldstyle=false,proportional=true},%
+sf={oldstyle=false,proportional=true},%
+tt={oldstyle=false,proportional=true,variable=true},%
+qt=false%
+]{cfr-lm}
+%
+%if more space is needed, exchange cfr-lm by mathptmx
+%\usepackage{mathptmx}
+
+%for demonstration purposes only
+\usepackage[math]{blindtext}
+
+\usepackage[
+%pdfauthor={},
+%pdfsubject={},
+%pdftitle={},
+%pdfkeywords={},
+bookmarks=false,
+breaklinks=true,
+colorlinks=true,
+linkcolor=black,
+citecolor=black,
+urlcolor=black,
+%pdfstartpage=19,
+pdfpagelayout=SinglePage
+]{hyperref}
+%enables correct jumping to figures when referencing
+\usepackage[all]{hypcap}
+
+\usepackage[capitalise,nameinlink]{cleveref}
+%Nice formats for \cref
+\crefname{section}{Sect.}{Sect.}
+\Crefname{section}{Section}{Sections}
+\crefname{figure}{Fig.}{Fig.}
+\Crefname{figure}{Figure}{Figures}
+
+\usepackage{xspace}
+%\newcommand{\eg}{e.\,g.\xspace}
+%\newcommand{\ie}{i.\,e.\xspace}
+\newcommand{\eg}{e.\,g.,\ }
+\newcommand{\ie}{i.\,e.,\ }
+
+%introduce \powerset - hint by http://matheplanet.com/matheplanet/nuke/html/viewtopic.php?topic=136492&post_id=997377
+\DeclareFontFamily{U}{MnSymbolC}{}
+\DeclareSymbolFont{MnSyC}{U}{MnSymbolC}{m}{n}
+\DeclareFontShape{U}{MnSymbolC}{m}{n}{
+    <-6>  MnSymbolC5
+   <6-7>  MnSymbolC6
+   <7-8>  MnSymbolC7
+   <8-9>  MnSymbolC8
+   <9-10> MnSymbolC9
+  <10-12> MnSymbolC10
+  <12->   MnSymbolC12%
+}{}
+\DeclareMathSymbol{\powerset}{\mathord}{MnSyC}{180}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+
+%Works on MiKTeX only
+%hint by http://goemonx.blogspot.de/2012/01/pdflatex-ligaturen-und-copynpaste.html
+%also http://tex.stackexchange.com/questions/4397/make-ligatures-in-linux-libertine-copyable-and-searchable
+%This allows a copy'n'paste of the text from the paper
+%\input glyphtounicode.tex
+\pdfgentounicode=1
+
+\title{KBID: Kerberos Bracelet Identification (Short Paper)}
+%If Title is too long, use \titlerunning
+%\titlerunning{Short Title}
+
+%Single insitute
+%\author{Joseph Carrigan \and Paul Martin \and Michael Rushanan}
+%If there are too many authors, use \authorrunning
+%\authorrunning{First Author et al.}
+%\institute{Johns Hopkins University \{joseph.carrigan,pmartin,mrushan1\}@jhu.edu}
+
+%Multiple insitutes
+%Currently disabled
+%
+\iffalse
+%Multiple institutes are typeset as follows:
+\author{Firstname Lastname\inst{1} \and Firstname Lastname\inst{2} }
+%If there are too many authors, use \authorrunning
+%\authorrunning{First Author et al.}
+
+\institute{
+Insitute 1\\
+\email{...}\and
+Insitute 2\\
+\email{...}
+}
+\fi
+			
+\maketitle
+
+\begin{abstract}
+The most common method for a user to gain access to a system, service, or resource is to provide a secret, often a password, that verifies her identity and thus authenticates her. Password-based authentication is considered strong only when the password meets certain length and complexity requirements, or when it is combined with other methods in multi-factor authentication. Unfortunately, many authentication systems do not enforce strong passwords due to a number of limitations; for example, the time taken to enter complex passwords. We present an authentication system that addresses these limitations by prompting a user for credentials once and then storing an authentication ticket in a wearable device that we call \textit{Kerberos Bracelet Identification} (KBID).  
+\end{abstract}
+
+\keywords{authentication, kerberos, wearables, passwords}
+
+\include{intro}
+\include{background}
+\include{related}
+\include{threats}
+\include{design}
+\include{results}
+\include{future}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{References}\label{sec:references}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\bibliographystyle{splncs03}
+\bibliography{paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
