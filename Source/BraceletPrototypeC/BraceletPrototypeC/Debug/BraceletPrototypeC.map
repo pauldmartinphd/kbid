@@ -1,0 +1,566 @@
+Archive member included because of file (symbol)
+
+C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                              BraceletPrototypeC.o (Init16BitTimer)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+                              c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328.o (exit)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+                              BraceletPrototypeC.o (__do_copy_data)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+                              BraceletPrototypeC.o (__do_clear_bss)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
+                              BraceletPrototypeC.o (__iob)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(puts.o)
+                              BraceletPrototypeC.o (puts)
+
+Allocating common symbols
+Common symbol       size              file
+
+litLed              0x2               BraceletPrototypeC.o
+ticket              0x16c             BraceletPrototypeC.o
+__iob               0x6               c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
+
+Discarded input sections
+
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328.o
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328.o
+ .text          0x00000000        0x0 BraceletPrototypeC.o
+ .data          0x00000000        0x0 BraceletPrototypeC.o
+ .bss           0x00000000        0x0 BraceletPrototypeC.o
+ .text          0x00000000        0x0 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .data          0x00000000        0x0 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .bss           0x00000000        0x0 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .text.InitADC  0x00000000       0x16 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .text.ReadADC  0x00000000       0x28 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .text.setThreshhold
+                0x00000000      0x1aa C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .rodata.str1.1
+                0x00000000       0x58 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .text.readMessageAnalog
+                0x00000000      0x1c2 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .text.sendPreamble
+                0x00000000        0xa C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(puts.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(puts.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(puts.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328.o
+LOAD BraceletPrototypeC.o
+START GROUP
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libm.a
+LOAD C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libm.a
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a
+END GROUP
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x746
+ *(.vectors)
+ .vectors       0x00000000       0x68 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+                0x00000068                . = ALIGN (0x2)
+                0x00000068                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000068        0x0 linker stubs
+ *(.trampolines*)
+                0x00000068                __trampolines_end = .
+ *(.progmem*)
+                0x00000068                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000068                __ctors_start = .
+ *(.ctors)
+                0x00000068                __ctors_end = .
+                0x00000068                __dtors_start = .
+ *(.dtors)
+                0x00000068                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000068        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328.o
+                0x00000068                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000068        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000074       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
+                0x00000074                __do_copy_data
+ .init4         0x0000008a       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
+                0x0000008a                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000009a        0x8 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328.o
+ *(.init9)
+ *(.text)
+ .text          0x000000a2        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328.o
+                0x000000a2                __vector_22
+                0x000000a2                __vector_24
+                0x000000a2                __vector_12
+                0x000000a2                __bad_interrupt
+                0x000000a2                __vector_6
+                0x000000a2                __vector_3
+                0x000000a2                __vector_23
+                0x000000a2                __vector_25
+                0x000000a2                __vector_11
+                0x000000a2                __vector_13
+                0x000000a2                __vector_17
+                0x000000a2                __vector_19
+                0x000000a2                __vector_7
+                0x000000a2                __vector_5
+                0x000000a2                __vector_4
+                0x000000a2                __vector_9
+                0x000000a2                __vector_2
+                0x000000a2                __vector_21
+                0x000000a2                __vector_15
+                0x000000a2                __vector_8
+                0x000000a2                __vector_14
+                0x000000a2                __vector_10
+                0x000000a2                __vector_16
+                0x000000a2                __vector_18
+                0x000000a2                __vector_20
+                0x000000a6                . = ALIGN (0x2)
+ *(.text.*)
+ .text.deauth   0x000000a6       0x16 BraceletPrototypeC.o
+                0x000000a6                deauth
+ .text.auth     0x000000bc       0x16 BraceletPrototypeC.o
+                0x000000bc                auth
+ .text.waitForMessage
+                0x000000d2       0x1a BraceletPrototypeC.o
+                0x000000d2                waitForMessage
+ .text.validateMessage
+                0x000000ec       0x8e BraceletPrototypeC.o
+                0x000000ec                validateMessage
+ .text.handleAuthMessage
+                0x0000017a       0x4e BraceletPrototypeC.o
+                0x0000017a                handleAuthMessage
+ .text.handleDeauthMessage
+                0x000001c8       0x30 BraceletPrototypeC.o
+                0x000001c8                handleDeauthMessage
+ .text.sendStatusMessage
+                0x000001f8       0x68 BraceletPrototypeC.o
+                0x000001f8                sendStatusMessage
+ .text.__vector_1
+                0x00000260       0x54 BraceletPrototypeC.o
+                0x00000260                __vector_1
+ .text.main     0x000002b4      0x138 BraceletPrototypeC.o
+                0x000002b4                main
+ .text.Init16BitTimer
+                0x000003ec        0xc C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x000003ec                Init16BitTimer
+ .text.Read16BitTimer
+                0x000003f8       0x10 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x000003f8                Read16BitTimer
+ .text.Reset16BitTimer
+                0x00000408       0x10 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x00000408                Reset16BitTimer
+ .text.InitUSART
+                0x00000418       0x20 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x00000418                InitUSART
+ .text.USART0SendByte
+                0x00000438       0x24 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x00000438                USART0SendByte
+ .text.extractLengthFromMessage
+                0x0000045c       0x1e C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x0000045c                extractLengthFromMessage
+ .text.byteByByteCopy
+                0x0000047a       0x2a C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x0000047a                byteByByteCopy
+ .text.readMessageDigital
+                0x000004a4      0x152 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x000004a4                readMessageDigital
+ .text.sendBit  0x000005f6       0x2e C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x000005f6                sendBit
+ .text.sendMessage
+                0x00000624       0xc4 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                0x00000624                sendMessage
+ .text.avr-libc
+                0x000006e8       0x5a c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(puts.o)
+                0x000006e8                puts
+                0x00000742                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000742        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+                0x00000742                _exit
+                0x00000742                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000742        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000746                _etext = .
+
+.data           0x00800100       0x5c load address 0x00000746
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ *(.data*)
+ .data.serialStream
+                0x00800100        0xe BraceletPrototypeC.o
+                0x00800100                serialStream
+ .data.deviceID_Byte3
+                0x0080010e        0x1 BraceletPrototypeC.o
+                0x0080010e                deviceID_Byte3
+ .data.deviceID_Byte2
+                0x0080010f        0x1 BraceletPrototypeC.o
+                0x0080010f                deviceID_Byte2
+ .data.deviceID_Byte1
+                0x00800110        0x1 BraceletPrototypeC.o
+                0x00800110                deviceID_Byte1
+ .data.deviceID_Byte0
+                0x00800111        0x1 BraceletPrototypeC.o
+                0x00800111                deviceID_Byte0
+ *(.rodata)
+ *(.rodata*)
+ .rodata.str1.1
+                0x00800112       0x49 BraceletPrototypeC.o
+ *(.gnu.linkonce.d*)
+                0x0080015c                . = ALIGN (0x2)
+ *fill*         0x0080015b        0x1 
+                0x0080015c                _edata = .
+                0x0080015c                PROVIDE (__data_end, .)
+
+.bss            0x0080015c      0x178
+                0x0080015c                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss.ticketSize
+                0x0080015c        0x2 BraceletPrototypeC.o
+                0x0080015c                ticketSize
+ .bss.authenticated
+                0x0080015e        0x2 BraceletPrototypeC.o
+                0x0080015e                authenticated
+ *(COMMON)
+ COMMON         0x00800160      0x16e BraceletPrototypeC.o
+                0x00800160                litLed
+                0x00800162                ticket
+ COMMON         0x008002ce        0x6 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
+                0x008002ce                __iob
+                0x008002d4                PROVIDE (__bss_end, .)
+                0x00000746                __data_load_start = LOADADDR (.data)
+                0x000007a2                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008002d4        0x0
+                0x008002d4                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008002d4                PROVIDE (__noinit_end, .)
+                0x008002d4                _end = .
+                0x008002d4                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x30
+ *(.comment)
+ .comment       0x00000000       0x30 BraceletPrototypeC.o
+                                 0x31 (size before relaxing)
+ .comment       0x00000000       0x31 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+ .comment       0x00000000       0x31 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
+ .comment       0x00000000       0x31 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(puts.o)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xf0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x60 BraceletPrototypeC.o
+ .debug_aranges
+                0x00000060       0x90 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x119e
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x87d BraceletPrototypeC.o
+ .debug_info    0x0000087d      0x921 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+
+.debug_abbrev   0x00000000      0x5e9
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x2b6 BraceletPrototypeC.o
+ .debug_abbrev  0x000002b6      0x333 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+
+.debug_line     0x00000000      0x660
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x00000000      0x2cd BraceletPrototypeC.o
+ .debug_line    0x000002cd      0x393 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+
+.debug_frame    0x00000000      0x394
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x148 BraceletPrototypeC.o
+ .debug_frame   0x00000148      0x24c C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+
+.debug_str      0x00000000      0x54b
+ *(.debug_str)
+ .debug_str     0x00000000      0x342 BraceletPrototypeC.o
+                                0x385 (size before relaxing)
+ .debug_str     0x00000342      0x209 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+                                0x3fc (size before relaxing)
+
+.debug_loc      0x00000000     0x1100
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x4b0 BraceletPrototypeC.o
+ .debug_loc     0x000004b0      0xc50 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000       0xd0
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x50 BraceletPrototypeC.o
+ .debug_ranges  0x00000050       0x80 C:\Users\Joseph\JhuOneDrive\OneDrive for Business\Atmel Studio\6.1\KBIDCommon\KBIDCommon\Debug\libKBIDCommon.a(KBIDCommon.o)
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(BraceletPrototypeC.elf elf32-avr)
+LOAD linker stubs

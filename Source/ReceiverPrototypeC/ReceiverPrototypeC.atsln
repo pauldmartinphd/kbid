@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ReceiverPrototypeC", "ReceiverPrototypeC\ReceiverPrototypeC.cproj", "{3B847F3E-0F29-49DA-A8E8-A7B7B5D8995D}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "KBIDCommon", "..\KBIDCommon\KBIDCommon\KBIDCommon.cproj", "{A27F1226-A9B3-47AC-AFD1-0714047600B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B847F3E-0F29-49DA-A8E8-A7B7B5D8995D}.Debug|AVR.ActiveCfg = Debug|AVR
+		{3B847F3E-0F29-49DA-A8E8-A7B7B5D8995D}.Debug|AVR.Build.0 = Debug|AVR
+		{3B847F3E-0F29-49DA-A8E8-A7B7B5D8995D}.Release|AVR.ActiveCfg = Release|AVR
+		{3B847F3E-0F29-49DA-A8E8-A7B7B5D8995D}.Release|AVR.Build.0 = Release|AVR
+		{A27F1226-A9B3-47AC-AFD1-0714047600B0}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A27F1226-A9B3-47AC-AFD1-0714047600B0}.Debug|AVR.Build.0 = Debug|AVR
+		{A27F1226-A9B3-47AC-AFD1-0714047600B0}.Release|AVR.ActiveCfg = Release|AVR
+		{A27F1226-A9B3-47AC-AFD1-0714047600B0}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

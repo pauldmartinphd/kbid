@@ -1,0 +1,1386 @@
+
+BraceletPrototypeC.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000005c  00800100  00000746  000007da  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000746  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000178  0080015c  0080015c  00000836  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000836  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000f0  00000000  00000000  00000866  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000119e  00000000  00000000  00000956  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005e9  00000000  00000000  00001af4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000660  00000000  00000000  000020dd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000394  00000000  00000000  00002740  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000054b  00000000  00000000  00002ad4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00001100  00000000  00000000  0000301f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000d0  00000000  00000000  0000411f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 30 01 	jmp	0x260	; 0x260 <__vector_1>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e6 e4       	ldi	r30, 0x46	; 70
+  7c:	f7 e0       	ldi	r31, 0x07	; 7
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	ac 35       	cpi	r26, 0x5C	; 92
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	22 e0       	ldi	r18, 0x02	; 2
+  8c:	ac e5       	ldi	r26, 0x5C	; 92
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a4 3d       	cpi	r26, 0xD4	; 212
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 5a 01 	call	0x2b4	; 0x2b4 <main>
+  9e:	0c 94 a1 03 	jmp	0x742	; 0x742 <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <deauth>:
+uint8_t deviceID_Byte2 = 0x01;
+uint8_t deviceID_Byte3 = 0x01;
+
+void deauth()
+{
+	authenticated = 0;
+  a6:	10 92 5f 01 	sts	0x015F, r1
+  aa:	10 92 5e 01 	sts	0x015E, r1
+	PORTB &= 0xFC; // Clear UI Bits
+  ae:	85 b1       	in	r24, 0x05	; 5
+  b0:	8c 7f       	andi	r24, 0xFC	; 252
+  b2:	85 b9       	out	0x05, r24	; 5
+	PORTB |= 0x01; // Turn on Red Light
+  b4:	28 9a       	sbi	0x05, 0	; 5
+	
+	while (PIND & (1 << PIND2)); //Wait for the wrist band to close
+  b6:	4a 99       	sbic	0x09, 2	; 9
+  b8:	fe cf       	rjmp	.-4      	; 0xb6 <deauth+0x10>
+}
+  ba:	08 95       	ret
+
+000000bc <auth>:
+
+void auth()
+{
+	authenticated = 1;
+  bc:	81 e0       	ldi	r24, 0x01	; 1
+  be:	90 e0       	ldi	r25, 0x00	; 0
+  c0:	90 93 5f 01 	sts	0x015F, r25
+  c4:	80 93 5e 01 	sts	0x015E, r24
+	PORTB &= 0xFC; // Clear UI Bits
+  c8:	85 b1       	in	r24, 0x05	; 5
+  ca:	8c 7f       	andi	r24, 0xFC	; 252
+  cc:	85 b9       	out	0x05, r24	; 5
+	PORTB |= 0x02; // Turn on Green Light
+  ce:	29 9a       	sbi	0x05, 1	; 5
+  d0:	08 95       	ret
+
+000000d2 <waitForMessage>:
+}
+
+void waitForMessage(char message[MESSAGELENGTH])
+{
+  d2:	cf 93       	push	r28
+  d4:	df 93       	push	r29
+  d6:	ec 01       	movw	r28, r24
+	//printf("Waiting for message\n");
+	while(!(PINC & (1 << PINC0))); //Wait for the pin to go high
+  d8:	30 9b       	sbis	0x06, 0	; 6
+  da:	fe cf       	rjmp	.-4      	; 0xd8 <waitForMessage+0x6>
+	Reset16BitTimer();
+  dc:	0e 94 04 02 	call	0x408	; 0x408 <Reset16BitTimer>
+	readMessageDigital(message);
+  e0:	ce 01       	movw	r24, r28
+  e2:	0e 94 52 02 	call	0x4a4	; 0x4a4 <readMessageDigital>
+	//readMessageDigital(message, &PINC, PINC0, 1, 3);
+	return;
+}
+  e6:	df 91       	pop	r29
+  e8:	cf 91       	pop	r28
+  ea:	08 95       	ret
+
+000000ec <validateMessage>:
+
+int validateMessage(char *message)
+{
+  ec:	fc 01       	movw	r30, r24
+	//Check to see if the message is a valid command
+	if(message[0] < 1 || message[0] > 3)
+  ee:	80 81       	ld	r24, Z
+  f0:	9f ef       	ldi	r25, 0xFF	; 255
+  f2:	98 0f       	add	r25, r24
+  f4:	93 30       	cpi	r25, 0x03	; 3
+  f6:	60 f5       	brcc	.+88     	; 0x150 <validateMessage+0x64>
+		return 0;
+	//Check to see if the message is intended for me
+	if(!(message[1] == deviceID_Byte0 && message[2] == deviceID_Byte1 && message[3] == deviceID_Byte2 && message[4] == deviceID_Byte3))
+  f8:	91 81       	ldd	r25, Z+1	; 0x01
+  fa:	20 91 11 01 	lds	r18, 0x0111
+  fe:	92 13       	cpse	r25, r18
+ 100:	0f c0       	rjmp	.+30     	; 0x120 <validateMessage+0x34>
+ 102:	32 81       	ldd	r19, Z+2	; 0x02
+ 104:	20 91 10 01 	lds	r18, 0x0110
+ 108:	32 13       	cpse	r19, r18
+ 10a:	0a c0       	rjmp	.+20     	; 0x120 <validateMessage+0x34>
+ 10c:	33 81       	ldd	r19, Z+3	; 0x03
+ 10e:	20 91 0f 01 	lds	r18, 0x010F
+ 112:	32 13       	cpse	r19, r18
+ 114:	05 c0       	rjmp	.+10     	; 0x120 <validateMessage+0x34>
+ 116:	34 81       	ldd	r19, Z+4	; 0x04
+ 118:	20 91 0e 01 	lds	r18, 0x010E
+ 11c:	32 17       	cp	r19, r18
+ 11e:	59 f0       	breq	.+22     	; 0x136 <validateMessage+0x4a>
+		//And it is not a broadcast
+		if(!(message[1] == 0xFF && message[2] == 0xFF && message[3] == 0xFF && message[4] == 0xFF))
+ 120:	9f 3f       	cpi	r25, 0xFF	; 255
+ 122:	c9 f4       	brne	.+50     	; 0x156 <validateMessage+0x6a>
+ 124:	92 81       	ldd	r25, Z+2	; 0x02
+ 126:	9f 3f       	cpi	r25, 0xFF	; 255
+ 128:	c9 f4       	brne	.+50     	; 0x15c <validateMessage+0x70>
+ 12a:	93 81       	ldd	r25, Z+3	; 0x03
+ 12c:	9f 3f       	cpi	r25, 0xFF	; 255
+ 12e:	c9 f4       	brne	.+50     	; 0x162 <validateMessage+0x76>
+ 130:	94 81       	ldd	r25, Z+4	; 0x04
+ 132:	9f 3f       	cpi	r25, 0xFF	; 255
+ 134:	c9 f4       	brne	.+50     	; 0x168 <validateMessage+0x7c>
+			return 0;
+	//if it is a get status or deauth
+	if(message[0] == 0x01 || message[0] == 0x03)
+ 136:	8d 7f       	andi	r24, 0xFD	; 253
+ 138:	81 30       	cpi	r24, 0x01	; 1
+ 13a:	c9 f4       	brne	.+50     	; 0x16e <validateMessage+0x82>
+		//and the ticket length is GT 0
+		if(message[5] > 0 || message[6] > 0)
+ 13c:	85 81       	ldd	r24, Z+5	; 0x05
+ 13e:	81 11       	cpse	r24, r1
+ 140:	19 c0       	rjmp	.+50     	; 0x174 <validateMessage+0x88>
+ 142:	81 e0       	ldi	r24, 0x01	; 1
+ 144:	90 e0       	ldi	r25, 0x00	; 0
+ 146:	26 81       	ldd	r18, Z+6	; 0x06
+ 148:	22 23       	and	r18, r18
+ 14a:	b1 f0       	breq	.+44     	; 0x178 <validateMessage+0x8c>
+ 14c:	80 e0       	ldi	r24, 0x00	; 0
+ 14e:	08 95       	ret
+
+int validateMessage(char *message)
+{
+	//Check to see if the message is a valid command
+	if(message[0] < 1 || message[0] > 3)
+		return 0;
+ 150:	80 e0       	ldi	r24, 0x00	; 0
+ 152:	90 e0       	ldi	r25, 0x00	; 0
+ 154:	08 95       	ret
+	//Check to see if the message is intended for me
+	if(!(message[1] == deviceID_Byte0 && message[2] == deviceID_Byte1 && message[3] == deviceID_Byte2 && message[4] == deviceID_Byte3))
+		//And it is not a broadcast
+		if(!(message[1] == 0xFF && message[2] == 0xFF && message[3] == 0xFF && message[4] == 0xFF))
+			return 0;
+ 156:	80 e0       	ldi	r24, 0x00	; 0
+ 158:	90 e0       	ldi	r25, 0x00	; 0
+ 15a:	08 95       	ret
+ 15c:	80 e0       	ldi	r24, 0x00	; 0
+ 15e:	90 e0       	ldi	r25, 0x00	; 0
+ 160:	08 95       	ret
+ 162:	80 e0       	ldi	r24, 0x00	; 0
+ 164:	90 e0       	ldi	r25, 0x00	; 0
+ 166:	08 95       	ret
+ 168:	80 e0       	ldi	r24, 0x00	; 0
+ 16a:	90 e0       	ldi	r25, 0x00	; 0
+ 16c:	08 95       	ret
+	//if it is a get status or deauth
+	if(message[0] == 0x01 || message[0] == 0x03)
+		//and the ticket length is GT 0
+		if(message[5] > 0 || message[6] > 0)
+			return 0;
+	return 1;		
+ 16e:	81 e0       	ldi	r24, 0x01	; 1
+ 170:	90 e0       	ldi	r25, 0x00	; 0
+ 172:	08 95       	ret
+			return 0;
+	//if it is a get status or deauth
+	if(message[0] == 0x01 || message[0] == 0x03)
+		//and the ticket length is GT 0
+		if(message[5] > 0 || message[6] > 0)
+			return 0;
+ 174:	80 e0       	ldi	r24, 0x00	; 0
+ 176:	90 e0       	ldi	r25, 0x00	; 0
+	return 1;		
+}
+ 178:	08 95       	ret
+
+0000017a <handleAuthMessage>:
+
+void handleAuthMessage(char *message, char *ticket, int *ticketLength)
+{
+ 17a:	cf 92       	push	r12
+ 17c:	df 92       	push	r13
+ 17e:	ef 92       	push	r14
+ 180:	ff 92       	push	r15
+ 182:	0f 93       	push	r16
+ 184:	1f 93       	push	r17
+ 186:	cf 93       	push	r28
+ 188:	df 93       	push	r29
+ 18a:	7c 01       	movw	r14, r24
+ 18c:	6b 01       	movw	r12, r22
+ 18e:	ea 01       	movw	r28, r20
+	extractLengthFromMessage(message, ticketLength);
+ 190:	ba 01       	movw	r22, r20
+ 192:	0e 94 2e 02 	call	0x45c	; 0x45c <extractLengthFromMessage>
+	if(*ticketLength > MESSAGELENGTH - 20)
+ 196:	08 81       	ld	r16, Y
+ 198:	19 81       	ldd	r17, Y+1	; 0x01
+ 19a:	0d 36       	cpi	r16, 0x6D	; 109
+ 19c:	81 e0       	ldi	r24, 0x01	; 1
+ 19e:	18 07       	cpc	r17, r24
+ 1a0:	54 f4       	brge	.+20     	; 0x1b6 <handleAuthMessage+0x3c>
+		return; //If the ticket is too big, do nothing
+	byteByByteCopy(ticket, message, 0, 6, *ticketLength);
+ 1a2:	26 e0       	ldi	r18, 0x06	; 6
+ 1a4:	30 e0       	ldi	r19, 0x00	; 0
+ 1a6:	40 e0       	ldi	r20, 0x00	; 0
+ 1a8:	50 e0       	ldi	r21, 0x00	; 0
+ 1aa:	b7 01       	movw	r22, r14
+ 1ac:	c6 01       	movw	r24, r12
+ 1ae:	0e 94 3d 02 	call	0x47a	; 0x47a <byteByByteCopy>
+	auth();
+ 1b2:	0e 94 5e 00 	call	0xbc	; 0xbc <auth>
+}
+ 1b6:	df 91       	pop	r29
+ 1b8:	cf 91       	pop	r28
+ 1ba:	1f 91       	pop	r17
+ 1bc:	0f 91       	pop	r16
+ 1be:	ff 90       	pop	r15
+ 1c0:	ef 90       	pop	r14
+ 1c2:	df 90       	pop	r13
+ 1c4:	cf 90       	pop	r12
+ 1c6:	08 95       	ret
+
+000001c8 <handleDeauthMessage>:
+
+void handleDeauthMessage(char* ticket, int *ticketLength)
+{
+ 1c8:	db 01       	movw	r26, r22
+	int i;
+	for(i=0; i < *ticketLength; i++)
+ 1ca:	2d 91       	ld	r18, X+
+ 1cc:	3c 91       	ld	r19, X
+ 1ce:	11 97       	sbiw	r26, 0x01	; 1
+ 1d0:	12 16       	cp	r1, r18
+ 1d2:	13 06       	cpc	r1, r19
+ 1d4:	64 f4       	brge	.+24     	; 0x1ee <handleDeauthMessage+0x26>
+ 1d6:	e8 2f       	mov	r30, r24
+ 1d8:	f9 2f       	mov	r31, r25
+ 1da:	80 e0       	ldi	r24, 0x00	; 0
+ 1dc:	90 e0       	ldi	r25, 0x00	; 0
+	{
+		//wipe the memory
+		ticket[i] = 0xff; //11111111
+		ticket[i] = 0x55; //01010101
+		ticket[i] = 0xAA; //10101010
+		ticket[i] = 0x00; //00000000
+ 1de:	11 92       	st	Z+, r1
+}
+
+void handleDeauthMessage(char* ticket, int *ticketLength)
+{
+	int i;
+	for(i=0; i < *ticketLength; i++)
+ 1e0:	01 96       	adiw	r24, 0x01	; 1
+ 1e2:	2d 91       	ld	r18, X+
+ 1e4:	3c 91       	ld	r19, X
+ 1e6:	11 97       	sbiw	r26, 0x01	; 1
+ 1e8:	82 17       	cp	r24, r18
+ 1ea:	93 07       	cpc	r25, r19
+ 1ec:	c4 f3       	brlt	.-16     	; 0x1de <handleDeauthMessage+0x16>
+		ticket[i] = 0xff; //11111111
+		ticket[i] = 0x55; //01010101
+		ticket[i] = 0xAA; //10101010
+		ticket[i] = 0x00; //00000000
+	}
+	*ticketLength = 0;
+ 1ee:	1d 92       	st	X+, r1
+ 1f0:	1c 92       	st	X, r1
+	deauth();
+ 1f2:	0e 94 53 00 	call	0xa6	; 0xa6 <deauth>
+ 1f6:	08 95       	ret
+
+000001f8 <sendStatusMessage>:
+}
+
+void sendStatusMessage(char *message, char *ticket, int *ticketLength)
+{
+ 1f8:	0f 93       	push	r16
+ 1fa:	1f 93       	push	r17
+ 1fc:	cf 93       	push	r28
+ 1fe:	df 93       	push	r29
+ 200:	ec 01       	movw	r28, r24
+	message[1] = deviceID_Byte0;
+ 202:	80 91 11 01 	lds	r24, 0x0111
+ 206:	89 83       	std	Y+1, r24	; 0x01
+	message[2] = deviceID_Byte1;
+ 208:	80 91 10 01 	lds	r24, 0x0110
+ 20c:	8a 83       	std	Y+2, r24	; 0x02
+	message[3] = deviceID_Byte2;
+ 20e:	80 91 0f 01 	lds	r24, 0x010F
+ 212:	8b 83       	std	Y+3, r24	; 0x03
+	message[4] = deviceID_Byte3;
+ 214:	80 91 0e 01 	lds	r24, 0x010E
+ 218:	8c 83       	std	Y+4, r24	; 0x04
+	if(authenticated)
+ 21a:	80 91 5e 01 	lds	r24, 0x015E
+ 21e:	90 91 5f 01 	lds	r25, 0x015F
+ 222:	89 2b       	or	r24, r25
+ 224:	89 f0       	breq	.+34     	; 0x248 <sendStatusMessage+0x50>
+	{
+		message[0] = 0x02;
+ 226:	82 e0       	ldi	r24, 0x02	; 2
+ 228:	88 83       	st	Y, r24
+		message[5] = (*ticketLength >> 8) & 0x00FF; //Write the high bits of the size to the string
+ 22a:	fa 01       	movw	r30, r20
+ 22c:	81 81       	ldd	r24, Z+1	; 0x01
+ 22e:	8d 83       	std	Y+5, r24	; 0x05
+		message[6] = *ticketLength & 0x00FF; //write the low bits of the size
+ 230:	80 81       	ld	r24, Z
+ 232:	8e 83       	std	Y+6, r24	; 0x06
+		byteByByteCopy(message, ticket, 7, 0, *ticketLength);
+ 234:	00 81       	ld	r16, Z
+ 236:	11 81       	ldd	r17, Z+1	; 0x01
+ 238:	20 e0       	ldi	r18, 0x00	; 0
+ 23a:	30 e0       	ldi	r19, 0x00	; 0
+ 23c:	47 e0       	ldi	r20, 0x07	; 7
+ 23e:	50 e0       	ldi	r21, 0x00	; 0
+ 240:	ce 01       	movw	r24, r28
+ 242:	0e 94 3d 02 	call	0x47a	; 0x47a <byteByByteCopy>
+ 246:	04 c0       	rjmp	.+8      	; 0x250 <sendStatusMessage+0x58>
+	}
+	else
+	{
+		message[0] = 0x01;
+ 248:	81 e0       	ldi	r24, 0x01	; 1
+ 24a:	88 83       	st	Y, r24
+		message[5] = 0x00;
+ 24c:	1d 82       	std	Y+5, r1	; 0x05
+		message[6] = 0x00;
+ 24e:	1e 82       	std	Y+6, r1	; 0x06
+	}
+	sendMessage(message);
+ 250:	ce 01       	movw	r24, r28
+ 252:	0e 94 12 03 	call	0x624	; 0x624 <sendMessage>
+}
+ 256:	df 91       	pop	r29
+ 258:	cf 91       	pop	r28
+ 25a:	1f 91       	pop	r17
+ 25c:	0f 91       	pop	r16
+ 25e:	08 95       	ret
+
+00000260 <__vector_1>:
+
+ISR(INT0_vect)
+{
+ 260:	1f 92       	push	r1
+ 262:	0f 92       	push	r0
+ 264:	0f b6       	in	r0, 0x3f	; 63
+ 266:	0f 92       	push	r0
+ 268:	11 24       	eor	r1, r1
+ 26a:	2f 93       	push	r18
+ 26c:	3f 93       	push	r19
+ 26e:	4f 93       	push	r20
+ 270:	5f 93       	push	r21
+ 272:	6f 93       	push	r22
+ 274:	7f 93       	push	r23
+ 276:	8f 93       	push	r24
+ 278:	9f 93       	push	r25
+ 27a:	af 93       	push	r26
+ 27c:	bf 93       	push	r27
+ 27e:	ef 93       	push	r30
+ 280:	ff 93       	push	r31
+	handleDeauthMessage(ticket, &ticketSize);
+ 282:	6c e5       	ldi	r22, 0x5C	; 92
+ 284:	71 e0       	ldi	r23, 0x01	; 1
+ 286:	82 e6       	ldi	r24, 0x62	; 98
+ 288:	91 e0       	ldi	r25, 0x01	; 1
+ 28a:	0e 94 e4 00 	call	0x1c8	; 0x1c8 <handleDeauthMessage>
+	deauth();
+ 28e:	0e 94 53 00 	call	0xa6	; 0xa6 <deauth>
+}
+ 292:	ff 91       	pop	r31
+ 294:	ef 91       	pop	r30
+ 296:	bf 91       	pop	r27
+ 298:	af 91       	pop	r26
+ 29a:	9f 91       	pop	r25
+ 29c:	8f 91       	pop	r24
+ 29e:	7f 91       	pop	r23
+ 2a0:	6f 91       	pop	r22
+ 2a2:	5f 91       	pop	r21
+ 2a4:	4f 91       	pop	r20
+ 2a6:	3f 91       	pop	r19
+ 2a8:	2f 91       	pop	r18
+ 2aa:	0f 90       	pop	r0
+ 2ac:	0f be       	out	0x3f, r0	; 63
+ 2ae:	0f 90       	pop	r0
+ 2b0:	1f 90       	pop	r1
+ 2b2:	18 95       	reti
+
+000002b4 <main>:
+
+FILE serialStream = FDEV_SETUP_STREAM(USART0SendByte, NULL, _FDEV_SETUP_WRITE);
+
+int main(void)
+{
+ 2b4:	cf 93       	push	r28
+ 2b6:	df 93       	push	r29
+ 2b8:	cd b7       	in	r28, 0x3d	; 61
+ 2ba:	de b7       	in	r29, 0x3e	; 62
+ 2bc:	c0 58       	subi	r28, 0x80	; 128
+ 2be:	d1 40       	sbci	r29, 0x01	; 1
+ 2c0:	0f b6       	in	r0, 0x3f	; 63
+ 2c2:	f8 94       	cli
+ 2c4:	de bf       	out	0x3e, r29	; 62
+ 2c6:	0f be       	out	0x3f, r0	; 63
+ 2c8:	cd bf       	out	0x3d, r28	; 61
+	DDRB = 0xFF; // Port B is output (user Interface)
+ 2ca:	8f ef       	ldi	r24, 0xFF	; 255
+ 2cc:	84 b9       	out	0x04, r24	; 4
+	DDRC &= ~(1 << PINC0) ; //Pin C0 is input
+ 2ce:	38 98       	cbi	0x07, 0	; 7
+	DDRC |= (1 << PINC1); //Pin C1 is output
+ 2d0:	39 9a       	sbi	0x07, 1	; 7
+	DDRD = 0x00;  //Port D is input for the interrupt
+ 2d2:	1a b8       	out	0x0a, r1	; 10
+	
+	PORTD |= (1 << PIND2); // Enable the pullup resistor for the band sensor
+ 2d4:	5a 9a       	sbi	0x0b, 2	; 11
+	//PORTC |= (1 << PINC0); // Enable the pullup resistor for the amplifier output/signal input
+	EIMSK |= (1 << INT0); //Enable Interrupt 0
+ 2d6:	e8 9a       	sbi	0x1d, 0	; 29
+	EICRA |= (1 << ISC00); //Set Int 0 to fire on any logical change
+ 2d8:	e9 e6       	ldi	r30, 0x69	; 105
+ 2da:	f0 e0       	ldi	r31, 0x00	; 0
+ 2dc:	80 81       	ld	r24, Z
+ 2de:	81 60       	ori	r24, 0x01	; 1
+ 2e0:	80 83       	st	Z, r24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 2e2:	2f e7       	ldi	r18, 0x7F	; 127
+ 2e4:	8a e1       	ldi	r24, 0x1A	; 26
+ 2e6:	96 e0       	ldi	r25, 0x06	; 6
+ 2e8:	21 50       	subi	r18, 0x01	; 1
+ 2ea:	80 40       	sbci	r24, 0x00	; 0
+ 2ec:	90 40       	sbci	r25, 0x00	; 0
+ 2ee:	e1 f7       	brne	.-8      	; 0x2e8 <main+0x34>
+ 2f0:	00 c0       	rjmp	.+0      	; 0x2f2 <main+0x3e>
+ 2f2:	00 00       	nop
+	//Variables
+	char message[MESSAGELENGTH];
+	
+	_delay_ms(100);
+	
+	InitUSART();
+ 2f4:	0e 94 0c 02 	call	0x418	; 0x418 <InitUSART>
+	Init16BitTimer();
+ 2f8:	0e 94 f6 01 	call	0x3ec	; 0x3ec <Init16BitTimer>
+	sei();  //Enable global interrupts
+ 2fc:	78 94       	sei
+	
+	
+	stdout = &serialStream;
+ 2fe:	80 e0       	ldi	r24, 0x00	; 0
+ 300:	91 e0       	ldi	r25, 0x01	; 1
+ 302:	90 93 d1 02 	sts	0x02D1, r25
+ 306:	80 93 d0 02 	sts	0x02D0, r24
+	
+	deauth();
+ 30a:	0e 94 53 00 	call	0xa6	; 0xa6 <deauth>
+	printf("Bracelet on, waiting for signal.\n");
+ 30e:	82 e1       	ldi	r24, 0x12	; 18
+ 310:	91 e0       	ldi	r25, 0x01	; 1
+ 312:	0e 94 74 03 	call	0x6e8	; 0x6e8 <puts>
+	
+	//REMOVE
+	ticketSize = 256;
+ 316:	80 e0       	ldi	r24, 0x00	; 0
+ 318:	91 e0       	ldi	r25, 0x01	; 1
+ 31a:	90 93 5d 01 	sts	0x015D, r25
+ 31e:	80 93 5c 01 	sts	0x015C, r24
+	int i;
+	for(i = 0; i < ticketSize; i++)
+ 322:	80 91 5c 01 	lds	r24, 0x015C
+ 326:	90 91 5d 01 	lds	r25, 0x015D
+ 32a:	18 16       	cp	r1, r24
+ 32c:	19 06       	cpc	r1, r25
+ 32e:	7c f4       	brge	.+30     	; 0x34e <main+0x9a>
+ 330:	80 e0       	ldi	r24, 0x00	; 0
+ 332:	90 e0       	ldi	r25, 0x00	; 0
+		ticket[i] = 'A';
+ 334:	41 e4       	ldi	r20, 0x41	; 65
+ 336:	fc 01       	movw	r30, r24
+ 338:	ee 59       	subi	r30, 0x9E	; 158
+ 33a:	fe 4f       	sbci	r31, 0xFE	; 254
+ 33c:	40 83       	st	Z, r20
+	printf("Bracelet on, waiting for signal.\n");
+	
+	//REMOVE
+	ticketSize = 256;
+	int i;
+	for(i = 0; i < ticketSize; i++)
+ 33e:	01 96       	adiw	r24, 0x01	; 1
+ 340:	20 91 5c 01 	lds	r18, 0x015C
+ 344:	30 91 5d 01 	lds	r19, 0x015D
+ 348:	82 17       	cp	r24, r18
+ 34a:	93 07       	cpc	r25, r19
+ 34c:	a4 f3       	brlt	.-24     	; 0x336 <main+0x82>
+		ticket[i] = 'A';
+	auth();
+ 34e:	0e 94 5e 00 	call	0xbc	; 0xbc <auth>
+	    
+	while(1)
+    {
+		while(PINC & (1 << PINC0)); //Do nothing until the user touches the sensor
+ 352:	30 99       	sbic	0x06, 0	; 6
+ 354:	fe cf       	rjmp	.-4      	; 0x352 <main+0x9e>
+ 356:	87 e8       	ldi	r24, 0x87	; 135
+ 358:	93 e1       	ldi	r25, 0x13	; 19
+ 35a:	01 97       	sbiw	r24, 0x01	; 1
+ 35c:	f1 f7       	brne	.-4      	; 0x35a <main+0xa6>
+ 35e:	00 c0       	rjmp	.+0      	; 0x360 <main+0xac>
+ 360:	00 00       	nop
+		_delay_ms(1);	//Delay to let signal smooth out
+		//printf("Touch Detected\n");
+		waitForMessage(message);
+ 362:	ce 01       	movw	r24, r28
+ 364:	01 96       	adiw	r24, 0x01	; 1
+ 366:	0e 94 69 00 	call	0xd2	; 0xd2 <waitForMessage>
+		if(validateMessage(message))
+ 36a:	ce 01       	movw	r24, r28
+ 36c:	01 96       	adiw	r24, 0x01	; 1
+ 36e:	0e 94 76 00 	call	0xec	; 0xec <validateMessage>
+ 372:	89 2b       	or	r24, r25
+ 374:	89 f1       	breq	.+98     	; 0x3d8 <main+0x124>
+		{
+			switch(message[0])
+ 376:	89 81       	ldd	r24, Y+1	; 0x01
+ 378:	82 30       	cpi	r24, 0x02	; 2
+ 37a:	b9 f0       	breq	.+46     	; 0x3aa <main+0xf6>
+ 37c:	83 30       	cpi	r24, 0x03	; 3
+ 37e:	11 f1       	breq	.+68     	; 0x3c4 <main+0x110>
+ 380:	81 30       	cpi	r24, 0x01	; 1
+ 382:	51 f5       	brne	.+84     	; 0x3d8 <main+0x124>
+ 384:	87 e8       	ldi	r24, 0x87	; 135
+ 386:	93 e1       	ldi	r25, 0x13	; 19
+ 388:	01 97       	sbiw	r24, 0x01	; 1
+ 38a:	f1 f7       	brne	.-4      	; 0x388 <main+0xd4>
+ 38c:	00 c0       	rjmp	.+0      	; 0x38e <main+0xda>
+ 38e:	00 00       	nop
+			{
+				case 0x01:
+				{
+					_delay_ms(1);
+					sendStatusMessage(message, ticket, &ticketSize);
+ 390:	4c e5       	ldi	r20, 0x5C	; 92
+ 392:	51 e0       	ldi	r21, 0x01	; 1
+ 394:	62 e6       	ldi	r22, 0x62	; 98
+ 396:	71 e0       	ldi	r23, 0x01	; 1
+ 398:	ce 01       	movw	r24, r28
+ 39a:	01 96       	adiw	r24, 0x01	; 1
+ 39c:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <sendStatusMessage>
+					printf("Send Status\n");
+ 3a0:	83 e3       	ldi	r24, 0x33	; 51
+ 3a2:	91 e0       	ldi	r25, 0x01	; 1
+ 3a4:	0e 94 74 03 	call	0x6e8	; 0x6e8 <puts>
+					break;
+ 3a8:	17 c0       	rjmp	.+46     	; 0x3d8 <main+0x124>
+				}
+				case 0x02:
+				{
+					handleAuthMessage(message, ticket, &ticketSize);
+ 3aa:	4c e5       	ldi	r20, 0x5C	; 92
+ 3ac:	51 e0       	ldi	r21, 0x01	; 1
+ 3ae:	62 e6       	ldi	r22, 0x62	; 98
+ 3b0:	71 e0       	ldi	r23, 0x01	; 1
+ 3b2:	ce 01       	movw	r24, r28
+ 3b4:	01 96       	adiw	r24, 0x01	; 1
+ 3b6:	0e 94 bd 00 	call	0x17a	; 0x17a <handleAuthMessage>
+					printf("Authenticate\n");
+ 3ba:	8f e3       	ldi	r24, 0x3F	; 63
+ 3bc:	91 e0       	ldi	r25, 0x01	; 1
+ 3be:	0e 94 74 03 	call	0x6e8	; 0x6e8 <puts>
+					break;
+ 3c2:	0a c0       	rjmp	.+20     	; 0x3d8 <main+0x124>
+				}
+				case 0x03:
+				{
+					handleDeauthMessage(ticket, &ticketSize);
+ 3c4:	6c e5       	ldi	r22, 0x5C	; 92
+ 3c6:	71 e0       	ldi	r23, 0x01	; 1
+ 3c8:	82 e6       	ldi	r24, 0x62	; 98
+ 3ca:	91 e0       	ldi	r25, 0x01	; 1
+ 3cc:	0e 94 e4 00 	call	0x1c8	; 0x1c8 <handleDeauthMessage>
+					printf("Deauthenticate\n");
+ 3d0:	8c e4       	ldi	r24, 0x4C	; 76
+ 3d2:	91 e0       	ldi	r25, 0x01	; 1
+ 3d4:	0e 94 74 03 	call	0x6e8	; 0x6e8 <puts>
+ 3d8:	9f e7       	ldi	r25, 0x7F	; 127
+ 3da:	2a e1       	ldi	r18, 0x1A	; 26
+ 3dc:	86 e0       	ldi	r24, 0x06	; 6
+ 3de:	91 50       	subi	r25, 0x01	; 1
+ 3e0:	20 40       	sbci	r18, 0x00	; 0
+ 3e2:	80 40       	sbci	r24, 0x00	; 0
+ 3e4:	e1 f7       	brne	.-8      	; 0x3de <main+0x12a>
+ 3e6:	00 c0       	rjmp	.+0      	; 0x3e8 <main+0x134>
+ 3e8:	00 00       	nop
+ 3ea:	b3 cf       	rjmp	.-154    	; 0x352 <main+0x9e>
+
+000003ec <Init16BitTimer>:
+
+
+void Init16BitTimer()
+{
+	//Set timer to no prescaler
+	TCCR1B |= (1 << CS10);
+ 3ec:	e1 e8       	ldi	r30, 0x81	; 129
+ 3ee:	f0 e0       	ldi	r31, 0x00	; 0
+ 3f0:	80 81       	ld	r24, Z
+ 3f2:	81 60       	ori	r24, 0x01	; 1
+ 3f4:	80 83       	st	Z, r24
+ 3f6:	08 95       	ret
+
+000003f8 <Read16BitTimer>:
+
+unsigned int Read16BitTimer()
+{
+	unsigned char sreg;
+	unsigned int retVal;
+	sreg = SREG;
+ 3f8:	2f b7       	in	r18, 0x3f	; 63
+	cli();
+ 3fa:	f8 94       	cli
+	retVal = TCNT1;
+ 3fc:	80 91 84 00 	lds	r24, 0x0084
+ 400:	90 91 85 00 	lds	r25, 0x0085
+	SREG = sreg;
+ 404:	2f bf       	out	0x3f, r18	; 63
+	//sei();
+	return retVal;
+}
+ 406:	08 95       	ret
+
+00000408 <Reset16BitTimer>:
+
+void Reset16BitTimer()
+{
+	unsigned char sreg;
+	sreg = SREG;
+ 408:	8f b7       	in	r24, 0x3f	; 63
+	cli();
+ 40a:	f8 94       	cli
+	TCNT1 = 0;
+ 40c:	10 92 85 00 	sts	0x0085, r1
+ 410:	10 92 84 00 	sts	0x0084, r1
+	SREG = sreg;
+ 414:	8f bf       	out	0x3f, r24	; 63
+ 416:	08 95       	ret
+
+00000418 <InitUSART>:
+}
+
+void InitUSART()
+{
+	//Set Baud Rate Registers
+	UBRR0H = UBRRH_VALUE>>8;
+ 418:	10 92 c5 00 	sts	0x00C5, r1
+	UBRR0L = UBRRL_VALUE;
+ 41c:	81 e8       	ldi	r24, 0x81	; 129
+ 41e:	80 93 c4 00 	sts	0x00C4, r24
+	//8 Databits, no parady, 1 stop bit
+	UCSR0C |= (1 << UCSZ00)|(1 << UCSZ01);
+ 422:	e2 ec       	ldi	r30, 0xC2	; 194
+ 424:	f0 e0       	ldi	r31, 0x00	; 0
+ 426:	80 81       	ld	r24, Z
+ 428:	86 60       	ori	r24, 0x06	; 6
+ 42a:	80 83       	st	Z, r24
+	//Enable Send and Receive
+	UCSR0B |= (1 << RXEN0)|(1<<TXEN0);
+ 42c:	e1 ec       	ldi	r30, 0xC1	; 193
+ 42e:	f0 e0       	ldi	r31, 0x00	; 0
+ 430:	80 81       	ld	r24, Z
+ 432:	88 61       	ori	r24, 0x18	; 24
+ 434:	80 83       	st	Z, r24
+ 436:	08 95       	ret
+
+00000438 <USART0SendByte>:
+}
+
+int USART0SendByte(char data)
+{
+ 438:	cf 93       	push	r28
+ 43a:	c8 2f       	mov	r28, r24
+	//change \n to \r with recursion
+	if(data == '\n')
+ 43c:	8a 30       	cpi	r24, 0x0A	; 10
+ 43e:	19 f4       	brne	.+6      	; 0x446 <USART0SendByte+0xe>
+	{
+		USART0SendByte('\r');
+ 440:	8d e0       	ldi	r24, 0x0D	; 13
+ 442:	0e 94 1c 02 	call	0x438	; 0x438 <USART0SendByte>
+	}
+	//wait while previous bite is completed
+	while(!(UCSR0A&(1<<UDRE0))){}; //wait
+ 446:	e0 ec       	ldi	r30, 0xC0	; 192
+ 448:	f0 e0       	ldi	r31, 0x00	; 0
+ 44a:	90 81       	ld	r25, Z
+ 44c:	95 ff       	sbrs	r25, 5
+ 44e:	fd cf       	rjmp	.-6      	; 0x44a <USART0SendByte+0x12>
+	//Write the data
+	UDR0 = data;
+ 450:	c0 93 c6 00 	sts	0x00C6, r28
+	return 0;
+}
+ 454:	80 e0       	ldi	r24, 0x00	; 0
+ 456:	90 e0       	ldi	r25, 0x00	; 0
+ 458:	cf 91       	pop	r28
+ 45a:	08 95       	ret
+
+0000045c <extractLengthFromMessage>:
+
+void extractLengthFromMessage(char *message, int *length)
+{
+	*length = message[5] << 8;
+ 45c:	fc 01       	movw	r30, r24
+ 45e:	25 81       	ldd	r18, Z+5	; 0x05
+ 460:	30 e0       	ldi	r19, 0x00	; 0
+ 462:	32 2f       	mov	r19, r18
+ 464:	22 27       	eor	r18, r18
+ 466:	fb 01       	movw	r30, r22
+ 468:	31 83       	std	Z+1, r19	; 0x01
+ 46a:	20 83       	st	Z, r18
+	*length |= message[6];
+ 46c:	fc 01       	movw	r30, r24
+ 46e:	86 81       	ldd	r24, Z+6	; 0x06
+ 470:	28 2b       	or	r18, r24
+ 472:	fb 01       	movw	r30, r22
+ 474:	31 83       	std	Z+1, r19	; 0x01
+ 476:	20 83       	st	Z, r18
+ 478:	08 95       	ret
+
+0000047a <byteByByteCopy>:
+}
+
+void byteByByteCopy(char* destination, char* source, int destIndex, int sourceIndex, int length)
+{
+ 47a:	0f 93       	push	r16
+ 47c:	1f 93       	push	r17
+	int i;
+	for (i = 0; i< length; i++)
+ 47e:	10 16       	cp	r1, r16
+ 480:	11 06       	cpc	r1, r17
+ 482:	6c f4       	brge	.+26     	; 0x49e <byteByByteCopy+0x24>
+ 484:	fb 01       	movw	r30, r22
+ 486:	e2 0f       	add	r30, r18
+ 488:	f3 1f       	adc	r31, r19
+ 48a:	dc 01       	movw	r26, r24
+ 48c:	a4 0f       	add	r26, r20
+ 48e:	b5 1f       	adc	r27, r21
+ 490:	0e 0f       	add	r16, r30
+ 492:	1f 1f       	adc	r17, r31
+		destination[destIndex + i] = source[sourceIndex + i];
+ 494:	81 91       	ld	r24, Z+
+ 496:	8d 93       	st	X+, r24
+}
+
+void byteByByteCopy(char* destination, char* source, int destIndex, int sourceIndex, int length)
+{
+	int i;
+	for (i = 0; i< length; i++)
+ 498:	e0 17       	cp	r30, r16
+ 49a:	f1 07       	cpc	r31, r17
+ 49c:	d9 f7       	brne	.-10     	; 0x494 <byteByByteCopy+0x1a>
+		destination[destIndex + i] = source[sourceIndex + i];
+	return;
+}
+ 49e:	1f 91       	pop	r17
+ 4a0:	0f 91       	pop	r16
+ 4a2:	08 95       	ret
+
+000004a4 <readMessageDigital>:
+*	It expects the counter to have been reset right before it was called and 
+*	it expects the counter to be running.
+*	It also expects the signal to be high
+*/
+void readMessageDigital(char message[MESSAGELENGTH])
+{
+ 4a4:	2f 92       	push	r2
+ 4a6:	3f 92       	push	r3
+ 4a8:	4f 92       	push	r4
+ 4aa:	5f 92       	push	r5
+ 4ac:	6f 92       	push	r6
+ 4ae:	7f 92       	push	r7
+ 4b0:	8f 92       	push	r8
+ 4b2:	9f 92       	push	r9
+ 4b4:	af 92       	push	r10
+ 4b6:	bf 92       	push	r11
+ 4b8:	cf 92       	push	r12
+ 4ba:	df 92       	push	r13
+ 4bc:	ef 92       	push	r14
+ 4be:	ff 92       	push	r15
+ 4c0:	0f 93       	push	r16
+ 4c2:	1f 93       	push	r17
+ 4c4:	cf 93       	push	r28
+ 4c6:	df 93       	push	r29
+ 4c8:	5c 01       	movw	r10, r24
+	int lastLowLength = 0;
+	int shortLowLegnthMOE = 0;
+	int index = 0;
+	int bitshift = 7;
+	//Capture First Bit
+	while (RECEIVEPINS & (1 << RECEIVEPINSHIFT)); //Wait while the pin is high
+ 4ca:	30 99       	sbic	0x06, 0	; 6
+ 4cc:	fe cf       	rjmp	.-4      	; 0x4ca <readMessageDigital+0x26>
+	highLength = Read16BitTimer();
+ 4ce:	0e 94 fc 01 	call	0x3f8	; 0x3f8 <Read16BitTimer>
+ 4d2:	ec 01       	movw	r28, r24
+	Reset16BitTimer();
+ 4d4:	0e 94 04 02 	call	0x408	; 0x408 <Reset16BitTimer>
+	while((RECEIVEPINS & (1 << RECEIVEPINSHIFT)) < 1);
+ 4d8:	30 9b       	sbis	0x06, 0	; 6
+ 4da:	fe cf       	rjmp	.-4      	; 0x4d8 <readMessageDigital+0x34>
+	lowLength = Read16BitTimer();
+ 4dc:	0e 94 fc 01 	call	0x3f8	; 0x3f8 <Read16BitTimer>
+ 4e0:	7c 01       	movw	r14, r24
+	Reset16BitTimer();
+ 4e2:	0e 94 04 02 	call	0x408	; 0x408 <Reset16BitTimer>
+	shortLowLegnthMOE = lowLength >> 1;
+ 4e6:	67 01       	movw	r12, r14
+ 4e8:	d5 94       	asr	r13
+ 4ea:	c7 94       	ror	r12
+	message[index] = '\0';
+	//If the high length is long, write a 1
+	if(highLength > lowLength + shortLowLegnthMOE)
+ 4ec:	c7 01       	movw	r24, r14
+ 4ee:	8c 0d       	add	r24, r12
+ 4f0:	9d 1d       	adc	r25, r13
+ 4f2:	8c 17       	cp	r24, r28
+ 4f4:	9d 07       	cpc	r25, r29
+ 4f6:	0c f0       	brlt	.+2      	; 0x4fa <readMessageDigital+0x56>
+ 4f8:	61 c0       	rjmp	.+194    	; 0x5bc <readMessageDigital+0x118>
+	{
+		message[index] = message[index] | (1 << bitshift);
+ 4fa:	80 e8       	ldi	r24, 0x80	; 128
+ 4fc:	f5 01       	movw	r30, r10
+ 4fe:	80 83       	st	Z, r24
+ 500:	5f c0       	rjmp	.+190    	; 0x5c0 <readMessageDigital+0x11c>
+	}
+	bitshift--;
+	while (index < MESSAGELENGTH)
+	{
+		if(index)
+ 502:	81 14       	cp	r8, r1
+ 504:	91 04       	cpc	r9, r1
+ 506:	21 f0       	breq	.+8      	; 0x510 <readMessageDigital+0x6c>
+			message[index] = '\0'; // Clear out the next character	
+ 508:	f5 01       	movw	r30, r10
+ 50a:	e8 0d       	add	r30, r8
+ 50c:	f9 1d       	adc	r31, r9
+ 50e:	10 82       	st	Z, r1
+				message[index] = message[index] | (1 << bitshift);
+				bitshift--;	
+			}
+		}
+		index++;
+		bitshift = 7; // reset the bit shift
+ 510:	f7 e0       	ldi	r31, 0x07	; 7
+ 512:	cf 2f       	mov	r28, r31
+ 514:	20 e0       	ldi	r18, 0x00	; 0
+ 516:	d2 2f       	mov	r29, r18
+ 518:	71 01       	movw	r14, r2
+			}
+			else //other wise, just write the bit
+			{
+				//If the high length is long, write a 1
+				if(highLength > lowLength + shortLowLegnthMOE)
+				message[index] = message[index] | (1 << bitshift);
+ 51a:	35 01       	movw	r6, r10
+ 51c:	68 0c       	add	r6, r8
+ 51e:	79 1c       	adc	r7, r9
+		if(index)
+			message[index] = '\0'; // Clear out the next character	
+		while(bitshift >= 0)
+		{
+			//The signal should be High, let the timer run to measure how long it is
+			while (RECEIVEPINS & (1 << RECEIVEPINSHIFT));
+ 520:	30 99       	sbic	0x06, 0	; 6
+ 522:	fe cf       	rjmp	.-4      	; 0x520 <readMessageDigital+0x7c>
+			highLength = Read16BitTimer();
+ 524:	0e 94 fc 01 	call	0x3f8	; 0x3f8 <Read16BitTimer>
+ 528:	8c 01       	movw	r16, r24
+			//Reset the timer to start counting the low length
+			Reset16BitTimer();
+ 52a:	0e 94 04 02 	call	0x408	; 0x408 <Reset16BitTimer>
+			//Store the old low length value
+			lastLowLength = lowLength;
+			//Then let the timer run to measure how long it is
+			while(((RECEIVEPINS & (1 << RECEIVEPINSHIFT)) < 1) && (TIFR1 ^ (1 << TOV1)));
+ 52e:	30 99       	sbic	0x06, 0	; 6
+ 530:	03 c0       	rjmp	.+6      	; 0x538 <readMessageDigital+0x94>
+ 532:	86 b3       	in	r24, 0x16	; 22
+ 534:	81 30       	cpi	r24, 0x01	; 1
+ 536:	d9 f7       	brne	.-10     	; 0x52e <readMessageDigital+0x8a>
+			lowLength = Read16BitTimer();
+ 538:	0e 94 fc 01 	call	0x3f8	; 0x3f8 <Read16BitTimer>
+ 53c:	1c 01       	movw	r2, r24
+			//Reset the timer to start counting the high length
+			Reset16BitTimer();
+ 53e:	0e 94 04 02 	call	0x408	; 0x408 <Reset16BitTimer>
+			//If low is longer than last low, we are at the end
+			if(lowLength > (lastLowLength+shortLowLegnthMOE))
+ 542:	ec 0c       	add	r14, r12
+ 544:	fd 1c       	adc	r15, r13
+ 546:	e2 14       	cp	r14, r2
+ 548:	f3 04       	cpc	r15, r3
+ 54a:	bc f4       	brge	.+46     	; 0x57a <readMessageDigital+0xd6>
+			{
+				if(highLength > (lastLowLength + shortLowLegnthMOE))
+ 54c:	e0 16       	cp	r14, r16
+ 54e:	f1 06       	cpc	r15, r17
+ 550:	7c f4       	brge	.+30     	; 0x570 <readMessageDigital+0xcc>
+					message[index] = message[index] | (1 << bitshift);
+ 552:	f5 01       	movw	r30, r10
+ 554:	e8 0d       	add	r30, r8
+ 556:	f9 1d       	adc	r31, r9
+ 558:	81 e0       	ldi	r24, 0x01	; 1
+ 55a:	90 e0       	ldi	r25, 0x00	; 0
+ 55c:	9c 01       	movw	r18, r24
+ 55e:	02 c0       	rjmp	.+4      	; 0x564 <readMessageDigital+0xc0>
+ 560:	22 0f       	add	r18, r18
+ 562:	33 1f       	adc	r19, r19
+ 564:	ca 95       	dec	r28
+ 566:	e2 f7       	brpl	.-8      	; 0x560 <readMessageDigital+0xbc>
+ 568:	e9 01       	movw	r28, r18
+ 56a:	80 81       	ld	r24, Z
+ 56c:	c8 2b       	or	r28, r24
+ 56e:	c0 83       	st	Z, r28
+				message[index+1] = '\0';
+ 570:	f5 01       	movw	r30, r10
+ 572:	e8 0d       	add	r30, r8
+ 574:	f9 1d       	adc	r31, r9
+ 576:	11 82       	std	Z+1, r1	; 0x01
+ 578:	2b c0       	rjmp	.+86     	; 0x5d0 <readMessageDigital+0x12c>
+				
+			}
+			else //other wise, just write the bit
+			{
+				//If the high length is long, write a 1
+				if(highLength > lowLength + shortLowLegnthMOE)
+ 57a:	c1 01       	movw	r24, r2
+ 57c:	8c 0d       	add	r24, r12
+ 57e:	9d 1d       	adc	r25, r13
+ 580:	80 17       	cp	r24, r16
+ 582:	91 07       	cpc	r25, r17
+ 584:	64 f4       	brge	.+24     	; 0x59e <readMessageDigital+0xfa>
+				message[index] = message[index] | (1 << bitshift);
+ 586:	f3 01       	movw	r30, r6
+ 588:	20 81       	ld	r18, Z
+ 58a:	c2 01       	movw	r24, r4
+ 58c:	0c 2e       	mov	r0, r28
+ 58e:	02 c0       	rjmp	.+4      	; 0x594 <readMessageDigital+0xf0>
+ 590:	88 0f       	add	r24, r24
+ 592:	99 1f       	adc	r25, r25
+ 594:	0a 94       	dec	r0
+ 596:	e2 f7       	brpl	.-8      	; 0x590 <readMessageDigital+0xec>
+ 598:	82 2b       	or	r24, r18
+ 59a:	f3 01       	movw	r30, r6
+ 59c:	80 83       	st	Z, r24
+				bitshift--;	
+ 59e:	21 97       	sbiw	r28, 0x01	; 1
+	bitshift--;
+	while (index < MESSAGELENGTH)
+	{
+		if(index)
+			message[index] = '\0'; // Clear out the next character	
+		while(bitshift >= 0)
+ 5a0:	dd 23       	and	r29, r29
+ 5a2:	14 f0       	brlt	.+4      	; 0x5a8 <readMessageDigital+0x104>
+			Reset16BitTimer();
+			//Store the old low length value
+			lastLowLength = lowLength;
+			//Then let the timer run to measure how long it is
+			while(((RECEIVEPINS & (1 << RECEIVEPINSHIFT)) < 1) && (TIFR1 ^ (1 << TOV1)));
+			lowLength = Read16BitTimer();
+ 5a4:	71 01       	movw	r14, r2
+ 5a6:	bc cf       	rjmp	.-136    	; 0x520 <readMessageDigital+0x7c>
+				if(highLength > lowLength + shortLowLegnthMOE)
+				message[index] = message[index] | (1 << bitshift);
+				bitshift--;	
+			}
+		}
+		index++;
+ 5a8:	ff ef       	ldi	r31, 0xFF	; 255
+ 5aa:	8f 1a       	sub	r8, r31
+ 5ac:	9f 0a       	sbc	r9, r31
+	if(highLength > lowLength + shortLowLegnthMOE)
+	{
+		message[index] = message[index] | (1 << bitshift);
+	}
+	bitshift--;
+	while (index < MESSAGELENGTH)
+ 5ae:	20 e8       	ldi	r18, 0x80	; 128
+ 5b0:	82 16       	cp	r8, r18
+ 5b2:	21 e0       	ldi	r18, 0x01	; 1
+ 5b4:	92 06       	cpc	r9, r18
+ 5b6:	0c f4       	brge	.+2      	; 0x5ba <readMessageDigital+0x116>
+ 5b8:	a4 cf       	rjmp	.-184    	; 0x502 <readMessageDigital+0x5e>
+ 5ba:	0a c0       	rjmp	.+20     	; 0x5d0 <readMessageDigital+0x12c>
+	Reset16BitTimer();
+	while((RECEIVEPINS & (1 << RECEIVEPINSHIFT)) < 1);
+	lowLength = Read16BitTimer();
+	Reset16BitTimer();
+	shortLowLegnthMOE = lowLength >> 1;
+	message[index] = '\0';
+ 5bc:	f5 01       	movw	r30, r10
+ 5be:	10 82       	st	Z, r1
+				message[index] = message[index] | (1 << bitshift);
+				bitshift--;	
+			}
+		}
+		index++;
+		bitshift = 7; // reset the bit shift
+ 5c0:	c6 e0       	ldi	r28, 0x06	; 6
+ 5c2:	d0 e0       	ldi	r29, 0x00	; 0
+ 5c4:	81 2c       	mov	r8, r1
+ 5c6:	91 2c       	mov	r9, r1
+			}
+			else //other wise, just write the bit
+			{
+				//If the high length is long, write a 1
+				if(highLength > lowLength + shortLowLegnthMOE)
+				message[index] = message[index] | (1 << bitshift);
+ 5c8:	44 24       	eor	r4, r4
+ 5ca:	43 94       	inc	r4
+ 5cc:	51 2c       	mov	r5, r1
+ 5ce:	a5 cf       	rjmp	.-182    	; 0x51a <readMessageDigital+0x76>
+		bitshift = 7; // reset the bit shift
+	}
+	//Debug code
+	//printf("Epsilon = %d\n", shortLowLegnthMOE);
+	return;
+}
+ 5d0:	df 91       	pop	r29
+ 5d2:	cf 91       	pop	r28
+ 5d4:	1f 91       	pop	r17
+ 5d6:	0f 91       	pop	r16
+ 5d8:	ff 90       	pop	r15
+ 5da:	ef 90       	pop	r14
+ 5dc:	df 90       	pop	r13
+ 5de:	cf 90       	pop	r12
+ 5e0:	bf 90       	pop	r11
+ 5e2:	af 90       	pop	r10
+ 5e4:	9f 90       	pop	r9
+ 5e6:	8f 90       	pop	r8
+ 5e8:	7f 90       	pop	r7
+ 5ea:	6f 90       	pop	r6
+ 5ec:	5f 90       	pop	r5
+ 5ee:	4f 90       	pop	r4
+ 5f0:	3f 90       	pop	r3
+ 5f2:	2f 90       	pop	r2
+ 5f4:	08 95       	ret
+
+000005f6 <sendBit>:
+
+void sendBit(uint8_t bit)
+{
+	PORTC |= (1 << PINC1); //Turn the pin on
+ 5f6:	41 9a       	sbi	0x08, 1	; 8
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 5f8:	e3 ef       	ldi	r30, 0xF3	; 243
+ 5fa:	f1 e0       	ldi	r31, 0x01	; 1
+ 5fc:	31 97       	sbiw	r30, 0x01	; 1
+ 5fe:	f1 f7       	brne	.-4      	; 0x5fc <sendBit+0x6>
+ 600:	00 c0       	rjmp	.+0      	; 0x602 <sendBit+0xc>
+ 602:	00 00       	nop
+	_delay_us(DELAYARG); //for Delay
+	if(bit == 1) _delay_us(DELAYARG); //Twice if a 1
+ 604:	81 30       	cpi	r24, 0x01	; 1
+ 606:	31 f4       	brne	.+12     	; 0x614 <sendBit+0x1e>
+ 608:	83 ef       	ldi	r24, 0xF3	; 243
+ 60a:	91 e0       	ldi	r25, 0x01	; 1
+ 60c:	01 97       	sbiw	r24, 0x01	; 1
+ 60e:	f1 f7       	brne	.-4      	; 0x60c <sendBit+0x16>
+ 610:	00 c0       	rjmp	.+0      	; 0x612 <sendBit+0x1c>
+ 612:	00 00       	nop
+	PORTC &= ~(1<<PINC1);  //Turn the pin off
+ 614:	41 98       	cbi	0x08, 1	; 8
+ 616:	e3 ef       	ldi	r30, 0xF3	; 243
+ 618:	f1 e0       	ldi	r31, 0x01	; 1
+ 61a:	31 97       	sbiw	r30, 0x01	; 1
+ 61c:	f1 f7       	brne	.-4      	; 0x61a <sendBit+0x24>
+ 61e:	00 c0       	rjmp	.+0      	; 0x620 <sendBit+0x2a>
+ 620:	00 00       	nop
+ 622:	08 95       	ret
+
+00000624 <sendMessage>:
+	_delay_us(DELAYARG); //for Delay
+}
+
+void sendMessage(char *messageString)
+{
+ 624:	8f 92       	push	r8
+ 626:	9f 92       	push	r9
+ 628:	af 92       	push	r10
+ 62a:	bf 92       	push	r11
+ 62c:	cf 92       	push	r12
+ 62e:	df 92       	push	r13
+ 630:	ef 92       	push	r14
+ 632:	ff 92       	push	r15
+ 634:	0f 93       	push	r16
+ 636:	1f 93       	push	r17
+ 638:	cf 93       	push	r28
+ 63a:	df 93       	push	r29
+ 63c:	00 d0       	rcall	.+0      	; 0x63e <sendMessage+0x1a>
+ 63e:	cd b7       	in	r28, 0x3d	; 61
+ 640:	de b7       	in	r29, 0x3e	; 62
+ 642:	6c 01       	movw	r12, r24
+	uint16_t ticketLength = 0;
+ 644:	1a 82       	std	Y+2, r1	; 0x02
+ 646:	19 82       	std	Y+1, r1	; 0x01
+	extractLengthFromMessage(messageString, &ticketLength);
+ 648:	be 01       	movw	r22, r28
+ 64a:	6f 5f       	subi	r22, 0xFF	; 255
+ 64c:	7f 4f       	sbci	r23, 0xFF	; 255
+ 64e:	0e 94 2e 02 	call	0x45c	; 0x45c <extractLengthFromMessage>
+	int sendLength = 7 + ticketLength;
+ 652:	29 81       	ldd	r18, Y+1	; 0x01
+ 654:	3a 81       	ldd	r19, Y+2	; 0x02
+ 656:	29 5f       	subi	r18, 0xF9	; 249
+ 658:	3f 4f       	sbci	r19, 0xFF	; 255
+ 65a:	21 38       	cpi	r18, 0x81	; 129
+ 65c:	81 e0       	ldi	r24, 0x01	; 1
+ 65e:	38 07       	cpc	r19, r24
+ 660:	14 f0       	brlt	.+4      	; 0x666 <sendMessage+0x42>
+ 662:	20 e8       	ldi	r18, 0x80	; 128
+ 664:	31 e0       	ldi	r19, 0x01	; 1
+	if (sendLength > MESSAGELENGTH) 
+		sendLength = MESSAGELENGTH; //Don't allow sending of RAM
+	int i;
+	for (i=0; i < sendLength; i++)
+ 666:	12 16       	cp	r1, r18
+ 668:	13 06       	cpc	r1, r19
+ 66a:	34 f5       	brge	.+76     	; 0x6b8 <sendMessage+0x94>
+ 66c:	76 01       	movw	r14, r12
+ 66e:	c2 0e       	add	r12, r18
+ 670:	d3 1e       	adc	r13, r19
+	PORTC &= ~(1<<PINC1);  //Turn the pin off
+	_delay_us(DELAYARG); //for Delay
+}
+
+void sendMessage(char *messageString)
+{
+ 672:	68 94       	set
+ 674:	88 24       	eor	r8, r8
+ 676:	83 f8       	bld	r8, 3
+ 678:	91 2c       	mov	r9, r1
+ 67a:	68 94       	set
+ 67c:	aa 24       	eor	r10, r10
+ 67e:	a7 f8       	bld	r10, 7
+ 680:	17 c0       	rjmp	.+46     	; 0x6b0 <sendMessage+0x8c>
+		//else
+		{
+			uint8_t mask = 0x80;
+			while (mask > 0)
+			{
+				if(messageString[i] & mask)
+ 682:	f7 01       	movw	r30, r14
+ 684:	80 81       	ld	r24, Z
+ 686:	8b 21       	and	r24, r11
+ 688:	21 f0       	breq	.+8      	; 0x692 <sendMessage+0x6e>
+				sendBit(1);
+ 68a:	81 e0       	ldi	r24, 0x01	; 1
+ 68c:	0e 94 fb 02 	call	0x5f6	; 0x5f6 <sendBit>
+ 690:	03 c0       	rjmp	.+6      	; 0x698 <sendMessage+0x74>
+				else
+				sendBit(0);
+ 692:	80 e0       	ldi	r24, 0x00	; 0
+ 694:	0e 94 fb 02 	call	0x5f6	; 0x5f6 <sendBit>
+				mask = mask >> 1;
+ 698:	b6 94       	lsr	r11
+ 69a:	01 50       	subi	r16, 0x01	; 1
+ 69c:	11 09       	sbc	r17, r1
+		//if(messageString[i] == '\0')
+		//	i = MESSAGELENGTH;
+		//else
+		{
+			uint8_t mask = 0x80;
+			while (mask > 0)
+ 69e:	01 15       	cp	r16, r1
+ 6a0:	11 05       	cpc	r17, r1
+ 6a2:	79 f7       	brne	.-34     	; 0x682 <sendMessage+0x5e>
+ 6a4:	ff ef       	ldi	r31, 0xFF	; 255
+ 6a6:	ef 1a       	sub	r14, r31
+ 6a8:	ff 0a       	sbc	r15, r31
+	extractLengthFromMessage(messageString, &ticketLength);
+	int sendLength = 7 + ticketLength;
+	if (sendLength > MESSAGELENGTH) 
+		sendLength = MESSAGELENGTH; //Don't allow sending of RAM
+	int i;
+	for (i=0; i < sendLength; i++)
+ 6aa:	ec 14       	cp	r14, r12
+ 6ac:	fd 04       	cpc	r15, r13
+ 6ae:	21 f0       	breq	.+8      	; 0x6b8 <sendMessage+0x94>
+	PORTC &= ~(1<<PINC1);  //Turn the pin off
+	_delay_us(DELAYARG); //for Delay
+}
+
+void sendMessage(char *messageString)
+{
+ 6b0:	08 2d       	mov	r16, r8
+ 6b2:	19 2d       	mov	r17, r9
+ 6b4:	ba 2c       	mov	r11, r10
+ 6b6:	e5 cf       	rjmp	.-54     	; 0x682 <sendMessage+0x5e>
+ 6b8:	8f ec       	ldi	r24, 0xCF	; 207
+ 6ba:	97 e0       	ldi	r25, 0x07	; 7
+ 6bc:	01 97       	sbiw	r24, 0x01	; 1
+ 6be:	f1 f7       	brne	.-4      	; 0x6bc <sendMessage+0x98>
+ 6c0:	00 c0       	rjmp	.+0      	; 0x6c2 <sendMessage+0x9e>
+ 6c2:	00 00       	nop
+			}
+		}
+	}
+	//Send end of message signal (long delay followed by a 0)
+	_delay_us(DELAYARG * 4);
+	sendBit(0);
+ 6c4:	80 e0       	ldi	r24, 0x00	; 0
+ 6c6:	0e 94 fb 02 	call	0x5f6	; 0x5f6 <sendBit>
+}
+ 6ca:	0f 90       	pop	r0
+ 6cc:	0f 90       	pop	r0
+ 6ce:	df 91       	pop	r29
+ 6d0:	cf 91       	pop	r28
+ 6d2:	1f 91       	pop	r17
+ 6d4:	0f 91       	pop	r16
+ 6d6:	ff 90       	pop	r15
+ 6d8:	ef 90       	pop	r14
+ 6da:	df 90       	pop	r13
+ 6dc:	cf 90       	pop	r12
+ 6de:	bf 90       	pop	r11
+ 6e0:	af 90       	pop	r10
+ 6e2:	9f 90       	pop	r9
+ 6e4:	8f 90       	pop	r8
+ 6e6:	08 95       	ret
+
+000006e8 <puts>:
+ 6e8:	0f 93       	push	r16
+ 6ea:	1f 93       	push	r17
+ 6ec:	cf 93       	push	r28
+ 6ee:	df 93       	push	r29
+ 6f0:	e0 91 d0 02 	lds	r30, 0x02D0
+ 6f4:	f0 91 d1 02 	lds	r31, 0x02D1
+ 6f8:	23 81       	ldd	r18, Z+3	; 0x03
+ 6fa:	21 ff       	sbrs	r18, 1
+ 6fc:	1b c0       	rjmp	.+54     	; 0x734 <puts+0x4c>
+ 6fe:	ec 01       	movw	r28, r24
+ 700:	00 e0       	ldi	r16, 0x00	; 0
+ 702:	10 e0       	ldi	r17, 0x00	; 0
+ 704:	89 91       	ld	r24, Y+
+ 706:	60 91 d0 02 	lds	r22, 0x02D0
+ 70a:	70 91 d1 02 	lds	r23, 0x02D1
+ 70e:	db 01       	movw	r26, r22
+ 710:	18 96       	adiw	r26, 0x08	; 8
+ 712:	ed 91       	ld	r30, X+
+ 714:	fc 91       	ld	r31, X
+ 716:	19 97       	sbiw	r26, 0x09	; 9
+ 718:	88 23       	and	r24, r24
+ 71a:	31 f0       	breq	.+12     	; 0x728 <puts+0x40>
+ 71c:	09 95       	icall
+ 71e:	89 2b       	or	r24, r25
+ 720:	89 f3       	breq	.-30     	; 0x704 <puts+0x1c>
+ 722:	0f ef       	ldi	r16, 0xFF	; 255
+ 724:	1f ef       	ldi	r17, 0xFF	; 255
+ 726:	ee cf       	rjmp	.-36     	; 0x704 <puts+0x1c>
+ 728:	8a e0       	ldi	r24, 0x0A	; 10
+ 72a:	09 95       	icall
+ 72c:	89 2b       	or	r24, r25
+ 72e:	11 f4       	brne	.+4      	; 0x734 <puts+0x4c>
+ 730:	c8 01       	movw	r24, r16
+ 732:	02 c0       	rjmp	.+4      	; 0x738 <puts+0x50>
+ 734:	8f ef       	ldi	r24, 0xFF	; 255
+ 736:	9f ef       	ldi	r25, 0xFF	; 255
+ 738:	df 91       	pop	r29
+ 73a:	cf 91       	pop	r28
+ 73c:	1f 91       	pop	r17
+ 73e:	0f 91       	pop	r16
+ 740:	08 95       	ret
+
+00000742 <_exit>:
+ 742:	f8 94       	cli
+
+00000744 <__stop_program>:
+ 744:	ff cf       	rjmp	.-2      	; 0x744 <__stop_program>
