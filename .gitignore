@@ -1,5 +1,4 @@
 .texpadtmp/
 *.aux
 *.synctex.gz
-*.pdf
 .DS_Store

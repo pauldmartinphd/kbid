@@ -321,7 +321,7 @@ The system workflow can be described in two use cases.  For the sake of brevity 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.7\linewidth]{./UnauthenticatedME}
+\includegraphics[width=0.9\linewidth]{./UnauthenticatedME}
 \caption[Un-Authenticated Message Exchange]{Un-Authenticated Message Exchange}
 \label{fig:UnauthenticatedME}
 \end{figure}
@@ -361,7 +361,7 @@ We encountered two major hurdles during the development of the first prototype. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Future Work}\label{sec:future}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Future work will focus on improving the system.  We plan to implement the system using a microcontroller that can store larger keys.  The Atmel ATMega328 only has 2 kilobytes of ram.  Since the systems needs some ram to perform operations, the key that is stored in RAM is limited to about 1 kilobyte.  This is not sufficient space to store authentication information in real world environments.  We also plan on hardening the system by adding pre-shared message authentication codes (MACs) to protect against replay attacks.
+Future work will focus on improving the system.  We plan to implement the system using a microcontroller that can store larger keys.  The Atmel ATMega328 only has 2 kilobytes of ram.  Since the systems needs some ram to perform operations, the key that is stored in RAM is limited to about 1 kilobyte.  This is not sufficient space to store authentication information in real world environments.  We also plan on hardening the system by adding pre-shared message authentication codes (MACs) to protect against replay device spoofing attacks.
 
 %In the long term, we may continue the development of the system model to include a system where passwords are not required at all.  A user would check in with a security technician who would personally and physically validate the user's identity then provide the user with a bracelet and assist authenticate the user without the user entering any information into a computer.  Finally we plan on submitting the system for internal review to get it clear for testing on human subjects.
 
