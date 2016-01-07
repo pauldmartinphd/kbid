@@ -1,0 +1,50 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{Barth:2008:BCB:1460257.1460273}
+Barth, A.T., Hanson, M.A., Powell, H.C., Unluer, D., Wilson, S.G., Lach, J.:
+  Body-coupled communication for body sensor networks. In: Proceedings of the
+  ICST 3rd International Conference on Body Area Networks (2008),
+  \url{http://dl.acm.org/citation.cfm?id=1460257.1460273}
+
+\bibitem{chang:healthtech:2013}
+Chang, S., Hu, Y., Anderson, H., Fu, T., Huang, E.Y.L.: Body area network
+  security: Robust key establishment using human body channel. In: Proc.\ 3rd
+  USENIX Workshop on Health Security and Privacy (HealthSec) (Aug.),
+  \url{https://www.usenix.org/conference/healthsec12/workshop-program/presentation/Chang}
+
+\bibitem{czeskis2008rfids}
+Czeskis, A., Koscher, K., Smith, J.R., Kohno, T.: Rfids and secret handshakes:
+  defending against ghost-and-leech attacks and unauthorized reads with
+  context-aware communications. In: Proceedings of the 15th ACM conference on
+  Computer and communications security. pp. 479--490. ACM (2008)
+
+\bibitem{BLEoverview}
+Gomez, C., Oller, J., Paradells, J.: Overview and evaluation of bluetooth low
+  energy: An emerging low-power wireless te chnology  (2012)
+
+\bibitem{goode2014bring}
+Goode, A.: Bring your own finger--how mobile is bringing biometrics to
+  consumers. Biometric Technology Today  2014(5),  5--9 (2014)
+
+\bibitem{idf2015intel}
+Krzanich, B.: Intel developer forum san francisco opening keynote. Tech. rep.
+  (2015)
+
+\bibitem{mare:zebra:2014}
+Mare, S., Markham, A., Cornelius, C., Peterson, R., Kotz, D.: Zebra:
+  Zero-effort bilateral recurring authentication. In: Security and Privacy
+  (SP), 2014 IEEE Symposium on (May 2014)
+
+\bibitem{BLEATTACK}
+Ryan, M.: Bluetooth: With low energy comes low security. In: Proceedings of the
+  7th USENIX Conference on Offensive Technologies. USENIX Association (2013),
+  \url{http://dl.acm.org/citation.cfm?id=2534748.2534754}
+
+\bibitem{Yan:2004:PMS:1024867.1025014}
+Yan, J., Blackwell, A., Anderson, R., Grant, A.: Password memorability and
+  security: Empirical results. IEEE Security and Privacy  (Sep 2004),
+  \url{http://dx.doi.org/10.1109/MSP.2004.81}
+
+\end{thebibliography}
