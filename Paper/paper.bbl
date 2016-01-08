@@ -11,7 +11,7 @@ Barth, A.T., Hanson, M.A., Powell, H.C., Unluer, D., Wilson, S.G., Lach, J.:
 \bibitem{chang:healthtech:2013}
 Chang, S., Hu, Y., Anderson, H., Fu, T., Huang, E.Y.L.: Body area network
   security: Robust key establishment using human body channel. In: Proc.\ 3rd
-  USENIX Workshop on Health Security and Privacy (HealthSec) (Aug.),
+  USENIX Workshop on Health Security and Privacy (HealthSec) (Aug 2013),
   \url{https://www.usenix.org/conference/healthsec12/workshop-program/presentation/Chang}
 
 \bibitem{czeskis2008rfids}
@@ -22,15 +22,16 @@ Czeskis, A., Koscher, K., Smith, J.R., Kohno, T.: Rfids and secret handshakes:
 
 \bibitem{BLEoverview}
 Gomez, C., Oller, J., Paradells, J.: Overview and evaluation of bluetooth low
-  energy: An emerging low-power wireless te chnology  (2012)
+  energy: An emerging low-power wireless technology. Sensors  12(9),  11734
+  (2012), \url{http://www.mdpi.com/1424-8220/12/9/11734}
 
 \bibitem{goode2014bring}
 Goode, A.: Bring your own finger--how mobile is bringing biometrics to
   consumers. Biometric Technology Today  2014(5),  5--9 (2014)
 
 \bibitem{idf2015intel}
-Krzanich, B.: Intel developer forum san francisco opening keynote. Tech. rep.
-  (2015)
+Krzanich, B.: Intel developer forum san francisco opening keynote. Tech. rep.,
+  Intel Corporation (2015)
 
 \bibitem{mare:zebra:2014}
 Mare, S., Markham, A., Cornelius, C., Peterson, R., Kotz, D.: Zebra:
